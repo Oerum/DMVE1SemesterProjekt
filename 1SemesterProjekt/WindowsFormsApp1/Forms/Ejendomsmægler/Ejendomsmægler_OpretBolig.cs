@@ -28,13 +28,12 @@ namespace WindowsFormsApp1.Forms
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
 
-                string sql = "INSERT INTO BoligTilSalg(BoligID, SælgerID, Pris, M2, PostNr, OprettelsesDato) " +
-                             "VALUES(@BoligID, @SælgerID, @Pris, @M2, @PostNr, CURRENT_TIMESTAMP);";
+                string sql = "INSERT INTO BoligTilSalg(SælgerID, Pris, M2, PostNr, OprettelsesDato) " +
+                             "VALUES(@SælgerID, @Pris, @M2, @PostNr, CURRENT_TIMESTAMP);";
 
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
                 cmd.Parameters.AddWithValue("@SælgerID", int.Parse(textBox2.Text));
                 cmd.Parameters.AddWithValue("@Pris", int.Parse(textBox3.Text));
                 cmd.Parameters.AddWithValue("@M2", int.Parse(textBox4.Text));
@@ -47,7 +46,6 @@ namespace WindowsFormsApp1.Forms
                 DataTable tbl = new DataTable();
                 string sqlshow = "SELECT * FROM BoligTilSalg;";
                 MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                cmd1.Parameters.AddWithValue("@Id1", int.Parse(textBox1.Text));
                 tbl.Load(cmd1.ExecuteReader());
                 dataGridView1.DataSource = tbl;
                 MessageBox.Show("Done");
