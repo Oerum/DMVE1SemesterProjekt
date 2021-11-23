@@ -62,7 +62,14 @@ namespace WindowsFormsApp1.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            panel1.Controls.Clear();
+            Ejendomsmægler_SletBolig OpretSælger = new Ejendomsmægler_SletBolig();
+            OpretSælger.TopLevel = false;
+            OpretSælger.AutoScroll = true;
+            panel1.Controls.Add(OpretSælger);
+            OpretSælger.Show();
         }
+
+
     }
 }

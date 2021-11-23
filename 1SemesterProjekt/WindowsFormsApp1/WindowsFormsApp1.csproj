@@ -107,6 +107,12 @@
     <Compile Include="Forms\Ejendomsmægler_OpretBolig.Designer.cs">
       <DependentUpon>Ejendomsmægler_OpretBolig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ejendomsmægler_OpretSælger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ejendomsmægler_OpretSælger.Designer.cs">
+      <DependentUpon>Ejendomsmægler_OpretSælger.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ejendomsmægler_SinglePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler_OpretBolig.resx">
       <DependentUpon>Ejendomsmægler_OpretBolig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ejendomsmægler_OpretSælger.resx">
+      <DependentUpon>Ejendomsmægler_OpretSælger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler_SinglePage.resx">
       <DependentUpon>Ejendomsmægler_SinglePage.cs</DependentUpon>
