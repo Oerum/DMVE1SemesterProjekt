@@ -95,46 +95,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EjendomsmæglerDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_OpdaterBolig.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterBolig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_OpdaterBolig.Designer.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterBolig.Designer.cs">
       <DependentUpon>Ejendomsmægler_OpdaterBolig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_OpdaterSælger.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterSælger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_OpdaterSælger.Designer.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterSælger.Designer.cs">
       <DependentUpon>Ejendomsmægler_OpdaterSælger.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_OpretBolig.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpretBolig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_OpretBolig.Designer.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpretBolig.Designer.cs">
       <DependentUpon>Ejendomsmægler_OpretBolig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_OpretSælger.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpretSælger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_OpretSælger.Designer.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpretSælger.Designer.cs">
       <DependentUpon>Ejendomsmægler_OpretSælger.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_SinglePage.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SinglePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_SinglePage.Designer.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SinglePage.Designer.cs">
       <DependentUpon>Ejendomsmægler_SinglePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_SletBolig.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SletBolig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_SletBolig.Designer.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SletBolig.Designer.cs">
       <DependentUpon>Ejendomsmægler_SletBolig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_SletSælger.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SletSælger.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_SletSælger.Designer.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SletSælger.Designer.cs">
       <DependentUpon>Ejendomsmægler_SletSælger.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Home.cs">
@@ -149,33 +149,33 @@
     <Compile Include="Forms\Kunder.Designer.cs">
       <DependentUpon>Kunder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_Login.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler_Login.Designer.cs">
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.Designer.cs">
       <DependentUpon>Ejendomsmægler_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Ejendomsmægler_OpdaterBolig.resx">
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterBolig.resx">
       <DependentUpon>Ejendomsmægler_OpdaterBolig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ejendomsmægler_OpdaterSælger.resx">
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterSælger.resx">
       <DependentUpon>Ejendomsmægler_OpdaterSælger.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ejendomsmægler_OpretBolig.resx">
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_OpretBolig.resx">
       <DependentUpon>Ejendomsmægler_OpretBolig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ejendomsmægler_OpretSælger.resx">
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_OpretSælger.resx">
       <DependentUpon>Ejendomsmægler_OpretSælger.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ejendomsmægler_SinglePage.resx">
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_SinglePage.resx">
       <DependentUpon>Ejendomsmægler_SinglePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ejendomsmægler_SletBolig.resx">
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_SletBolig.resx">
       <DependentUpon>Ejendomsmægler_SletBolig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ejendomsmægler_SletSælger.resx">
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_SletSælger.resx">
       <DependentUpon>Ejendomsmægler_SletSælger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
@@ -184,7 +184,7 @@
     <EmbeddedResource Include="Forms\Kunder.resx">
       <DependentUpon>Kunder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ejendomsmægler_Login.resx">
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.resx">
       <DependentUpon>Ejendomsmægler_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

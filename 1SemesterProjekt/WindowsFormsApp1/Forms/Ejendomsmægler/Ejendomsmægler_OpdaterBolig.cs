@@ -103,12 +103,5 @@ namespace WindowsFormsApp1.Forms
                 MessageBox.Show($"{ex}");
             }
         }
-
-        private void Ejendomsmægler_OpdaterBolig_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet1.BoligTilSalg' table. You can move, or remove it, as needed.
-            this.boligTilSalgTableAdapter1.Fill(this.ejendomsmæglerDataSet1.BoligTilSalg);
-
-        }
     }
 }

@@ -16,7 +16,17 @@ namespace WindowsFormsApp1.Forms
         public Ejendomsmægler_OpretSælger()
         {
             InitializeComponent();
-            //this.sælgerTableAdapter.Fill(this.ejendomsmæglerDataSet.Sælger);
+            #region PassToGrid
+            DB db = new DB();
+            MySqlConnection conn = new MySqlConnection(db.ConnStr);
+            DataTable tbl = new DataTable();
+            string sqlshow = "SELECT * FROM Sælger;";
+            MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
+            conn.Open();
+            tbl.Load(cmd1.ExecuteReader());
+            dataGridView1.DataSource = tbl;
+            conn.Close();
+            #endregion PassToGrid
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,8 +38,8 @@ namespace WindowsFormsApp1.Forms
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
 
-                string sql = "INSERT INTO Sælger(ID, Tlf, Fornavn, Efternavn) " +
-                             "VALUES(@ID, @Tlf, @Fornavn, @Efternavn);";
+                string sql = "INSERT INTO Sælger(ID, Tlf, Fornavn, Efternavn, Brugernavn, Kodeord) " +
+                             "VALUES (@ID, @Tlf, @Fornavn, @Efternavn, @Brugernavn, HEX(AES_ENCRYPT(@Kodeord, 'somethingfunnyhere')));";
 
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -38,6 +48,8 @@ namespace WindowsFormsApp1.Forms
                 cmd.Parameters.AddWithValue("@Tlf", textBox2.Text);
                 cmd.Parameters.AddWithValue("@Fornavn", textBox3.Text);
                 cmd.Parameters.AddWithValue("@Efternavn", textBox4.Text);
+                cmd.Parameters.AddWithValue("@Brugernavn", textBox5.Text);
+                cmd.Parameters.AddWithValue("@Kodeord", textBox6.Text);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -46,7 +58,6 @@ namespace WindowsFormsApp1.Forms
                 DataTable tbl = new DataTable();
                 string sqlshow = "SELECT * FROM Sælger;";
                 MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                cmd1.Parameters.AddWithValue("@Id1", int.Parse(textBox1.Text));
                 tbl.Load(cmd1.ExecuteReader());
                 dataGridView1.DataSource = tbl;
                 MessageBox.Show("Done");
@@ -57,15 +68,6 @@ namespace WindowsFormsApp1.Forms
             {
                 MessageBox.Show($"{ex}");
             }
-        }
-
-        private void Ejendomsmægler_OpretSælger_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet1.Sælger' table. You can move, or remove it, as needed.
-            this.sælgerTableAdapter1.Fill(this.ejendomsmæglerDataSet1.Sælger);
-            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet.Sælger' table. You can move, or remove it, as needed.
-            this.sælgerTableAdapter.Fill(this.ejendomsmæglerDataSet.Sælger);
-
         }
     }
 }

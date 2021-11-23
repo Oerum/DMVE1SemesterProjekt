@@ -40,17 +40,15 @@ namespace WindowsFormsApp1.Forms
             this.postNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boligTilSalgBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ejendomsmæglerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ejendomsmæglerDataSet = new WindowsFormsApp1.EjendomsmæglerDataSet();
             this.label1 = new System.Windows.Forms.Label();
+            this.boligTilSalgTableAdapter = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter();
             this.oprettelsesDatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ejendomsmæglerDataSet1 = new WindowsFormsApp1.EjendomsmæglerDataSet();
-            this.boligTilSalgBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.boligTilSalgTableAdapter1 = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -62,6 +60,7 @@ namespace WindowsFormsApp1.Forms
             this.label6.Size = new System.Drawing.Size(229, 31);
             this.label6.TabIndex = 41;
             this.label6.Text = "Sletning Af Bolig";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button1
             // 
@@ -79,6 +78,7 @@ namespace WindowsFormsApp1.Forms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(104, 20);
             this.textBox1.TabIndex = 34;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // boligIDDataGridViewTextBoxColumn
             // 
@@ -114,6 +114,18 @@ namespace WindowsFormsApp1.Forms
             // 
             this.boligTilSalgBindingSource.DataMember = "BoligTilSalg";
             this.boligTilSalgBindingSource.DataSource = this.ejendomsmæglerDataSetBindingSource;
+            this.boligTilSalgBindingSource.CurrentChanged += new System.EventHandler(this.boligTilSalgBindingSource_CurrentChanged);
+            // 
+            // ejendomsmæglerDataSetBindingSource
+            // 
+            this.ejendomsmæglerDataSetBindingSource.DataSource = this.ejendomsmæglerDataSet;
+            this.ejendomsmæglerDataSetBindingSource.Position = 0;
+            this.ejendomsmæglerDataSetBindingSource.CurrentChanged += new System.EventHandler(this.ejendomsmæglerDataSetBindingSource_CurrentChanged);
+            // 
+            // ejendomsmæglerDataSet
+            // 
+            this.ejendomsmæglerDataSet.DataSetName = "EjendomsmæglerDataSet";
+            this.ejendomsmæglerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -124,6 +136,11 @@ namespace WindowsFormsApp1.Forms
             this.label1.Size = new System.Drawing.Size(76, 24);
             this.label1.TabIndex = 29;
             this.label1.Text = "BoligID";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // boligTilSalgTableAdapter
+            // 
+            this.boligTilSalgTableAdapter.ClearBeforeFill = true;
             // 
             // oprettelsesDatoDataGridViewTextBoxColumn
             // 
@@ -143,25 +160,12 @@ namespace WindowsFormsApp1.Forms
             this.m2DataGridViewTextBoxColumn,
             this.postNrDataGridViewTextBoxColumn,
             this.oprettelsesDatoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.boligTilSalgBindingSource1;
+            this.dataGridView1.DataSource = this.boligTilSalgBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(138, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(652, 391);
             this.dataGridView1.TabIndex = 28;
-            // 
-            // ejendomsmæglerDataSet1
-            // 
-            this.ejendomsmæglerDataSet1.DataSetName = "EjendomsmæglerDataSet";
-            this.ejendomsmæglerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // boligTilSalgBindingSource1
-            // 
-            this.boligTilSalgBindingSource1.DataMember = "BoligTilSalg";
-            this.boligTilSalgBindingSource1.DataSource = this.ejendomsmæglerDataSet1;
-            // 
-            // boligTilSalgTableAdapter1
-            // 
-            this.boligTilSalgTableAdapter1.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Ejendomsmægler_SletBolig
             // 
@@ -176,12 +180,10 @@ namespace WindowsFormsApp1.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ejendomsmægler_SletBolig";
             this.Text = "Ejendomsmægler_SletBolig";
-            this.Load += new System.EventHandler(this.Ejendomsmægler_SletBolig_Load);
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,8 +206,5 @@ namespace WindowsFormsApp1.Forms
         private EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter boligTilSalgTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn oprettelsesDatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private EjendomsmæglerDataSet ejendomsmæglerDataSet1;
-        private System.Windows.Forms.BindingSource boligTilSalgBindingSource1;
-        private EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter boligTilSalgTableAdapter1;
     }
 }

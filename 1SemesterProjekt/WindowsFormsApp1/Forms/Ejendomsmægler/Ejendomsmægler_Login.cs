@@ -67,7 +67,7 @@ namespace WindowsFormsApp1.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Du har indtastet forkerte oplysninger");
+                    MessageBox.Show("Brugernavn eller Kodeord er ugyldigt");
                 }
             }
             catch (Exception ex)

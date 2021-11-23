@@ -11,48 +11,39 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Forms
 {
-    public partial class Ejendomsmægler_OpretBolig : Form
+    public partial class Ejendomsmægler_SletBolig : Form
     {
-        public Ejendomsmægler_OpretBolig()
+        public Ejendomsmægler_SletBolig()
         {
             InitializeComponent();
             this.boligTilSalgTableAdapter.Fill(this.ejendomsmæglerDataSet.BoligTilSalg);
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
                 DB db = new DB();
-
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
-
-                string sql = "INSERT INTO BoligTilSalg(BoligID, SælgerID, Pris, M2, PostNr, OprettelsesDato) " +
-                             "VALUES(@BoligID, @SælgerID, @Pris, @M2, @PostNr, CURRENT_TIMESTAMP);";
-
-
+                string sql = "DELETE FROM BoligTilSalg WHERE BoligID = @BoligID;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
-                cmd.Parameters.AddWithValue("@SælgerID", int.Parse(textBox2.Text));
-                cmd.Parameters.AddWithValue("@Pris", int.Parse(textBox3.Text));
-                cmd.Parameters.AddWithValue("@M2", int.Parse(textBox4.Text));
-                cmd.Parameters.AddWithValue("@PostNr", textBox5.Text);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
 
                 #region PassToGrid
                 DataTable tbl = new DataTable();
-                string sqlshow = "SELECT * FROM BoligTilSalg;";
+                string sqlshow = "SELECT * FROM BoligTilSalg";
                 MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                cmd1.Parameters.AddWithValue("@Id1", int.Parse(textBox1.Text));
                 tbl.Load(cmd1.ExecuteReader());
                 dataGridView1.DataSource = tbl;
                 MessageBox.Show("Done");
                 conn.Close();
                 #endregion PassToGrid
+
             }
             catch (Exception ex)
             {
@@ -60,10 +51,33 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
-        private void Ejendomsmægler_OpretBolig_Load(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet1.BoligTilSalg' table. You can move, or remove it, as needed.
-            this.boligTilSalgTableAdapter1.Fill(this.ejendomsmæglerDataSet1.BoligTilSalg);
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boligTilSalgBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ejendomsmæglerDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

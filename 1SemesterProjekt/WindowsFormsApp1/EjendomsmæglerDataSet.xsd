@@ -42,7 +42,7 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT `BoligID`, `SælgerID`, `Pris`, `M2`, `PostNr`, `OprettelsesDato` FROM `BoligTilSalg`</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -187,8 +187,8 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID`, `Tlf`, `Fornavn`, `Efternavn`, `Brugernavn`, `Kodeord` FROM `Køber`</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT `ID`, `Tlf`, `Fornavn`, `Efternavn` , `Brugernavn`, `Kodeord` FROM `Køber`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -344,7 +344,7 @@
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT `ID`, `Tlf`, `Fornavn`, `Efternavn`, `Brugernavn`, `Kodeord` FROM `Sælger`</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -392,7 +392,7 @@
   <xs:element name="EjendomsmæglerDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EjendomsmæglerDataSet" msprop:Generator_UserDSName="EjendomsmæglerDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="BoligTilSalg" msprop:Generator_TableClassName="BoligTilSalgDataTable" msprop:Generator_TableVarName="tableBoligTilSalg" msprop:Generator_TablePropName="BoligTilSalg" msprop:Generator_RowDeletingName="BoligTilSalgRowDeleting" msprop:Generator_RowChangingName="BoligTilSalgRowChanging" msprop:Generator_RowEvHandlerName="BoligTilSalgRowChangeEventHandler" msprop:Generator_RowDeletedName="BoligTilSalgRowDeleted" msprop:Generator_UserTableName="BoligTilSalg" msprop:Generator_RowChangedName="BoligTilSalgRowChanged" msprop:Generator_RowEvArgName="BoligTilSalgRowChangeEvent" msprop:Generator_RowClassName="BoligTilSalgRow">
+        <xs:element name="BoligTilSalg" msprop:Generator_TableClassName="BoligTilSalgDataTable" msprop:Generator_TableVarName="tableBoligTilSalg" msprop:Generator_RowChangedName="BoligTilSalgRowChanged" msprop:Generator_TablePropName="BoligTilSalg" msprop:Generator_RowDeletingName="BoligTilSalgRowDeleting" msprop:Generator_RowChangingName="BoligTilSalgRowChanging" msprop:Generator_RowEvHandlerName="BoligTilSalgRowChangeEventHandler" msprop:Generator_RowDeletedName="BoligTilSalgRowDeleted" msprop:Generator_RowClassName="BoligTilSalgRow" msprop:Generator_UserTableName="BoligTilSalg" msprop:Generator_RowEvArgName="BoligTilSalgRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="BoligID" msprop:Generator_ColumnVarNameInTable="columnBoligID" msprop:Generator_ColumnPropNameInRow="BoligID" msprop:Generator_ColumnPropNameInTable="BoligIDColumn" msprop:Generator_UserColumnName="BoligID" type="xs:int" />
@@ -410,7 +410,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Ejendomsmaegler" msprop:Generator_TableClassName="EjendomsmaeglerDataTable" msprop:Generator_TableVarName="tableEjendomsmaegler" msprop:Generator_TablePropName="Ejendomsmaegler" msprop:Generator_RowDeletingName="EjendomsmaeglerRowDeleting" msprop:Generator_RowChangingName="EjendomsmaeglerRowChanging" msprop:Generator_RowEvHandlerName="EjendomsmaeglerRowChangeEventHandler" msprop:Generator_RowDeletedName="EjendomsmaeglerRowDeleted" msprop:Generator_UserTableName="Ejendomsmaegler" msprop:Generator_RowChangedName="EjendomsmaeglerRowChanged" msprop:Generator_RowEvArgName="EjendomsmaeglerRowChangeEvent" msprop:Generator_RowClassName="EjendomsmaeglerRow">
+        <xs:element name="Ejendomsmaegler" msprop:Generator_TableClassName="EjendomsmaeglerDataTable" msprop:Generator_TableVarName="tableEjendomsmaegler" msprop:Generator_RowChangedName="EjendomsmaeglerRowChanged" msprop:Generator_TablePropName="Ejendomsmaegler" msprop:Generator_RowDeletingName="EjendomsmaeglerRowDeleting" msprop:Generator_RowChangingName="EjendomsmaeglerRowChanging" msprop:Generator_RowEvHandlerName="EjendomsmaeglerRowChangeEventHandler" msprop:Generator_RowDeletedName="EjendomsmaeglerRowDeleted" msprop:Generator_RowClassName="EjendomsmaeglerRow" msprop:Generator_UserTableName="Ejendomsmaegler" msprop:Generator_RowEvArgName="EjendomsmaeglerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -446,7 +446,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Køber" msprop:Generator_TableClassName="KøberDataTable" msprop:Generator_TableVarName="tableKøber" msprop:Generator_TablePropName="Køber" msprop:Generator_RowDeletingName="KøberRowDeleting" msprop:Generator_RowChangingName="KøberRowChanging" msprop:Generator_RowEvHandlerName="KøberRowChangeEventHandler" msprop:Generator_RowDeletedName="KøberRowDeleted" msprop:Generator_UserTableName="Køber" msprop:Generator_RowChangedName="KøberRowChanged" msprop:Generator_RowEvArgName="KøberRowChangeEvent" msprop:Generator_RowClassName="KøberRow">
+        <xs:element name="Køber" msprop:Generator_TableClassName="KøberDataTable" msprop:Generator_TableVarName="tableKøber" msprop:Generator_RowChangedName="KøberRowChanged" msprop:Generator_TablePropName="Køber" msprop:Generator_RowDeletingName="KøberRowDeleting" msprop:Generator_RowChangingName="KøberRowChanging" msprop:Generator_RowEvHandlerName="KøberRowChangeEventHandler" msprop:Generator_RowDeletedName="KøberRowDeleted" msprop:Generator_RowClassName="KøberRow" msprop:Generator_UserTableName="Køber" msprop:Generator_RowEvArgName="KøberRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -488,7 +488,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SolgteBolig" msprop:Generator_TableClassName="SolgteBoligDataTable" msprop:Generator_TableVarName="tableSolgteBolig" msprop:Generator_TablePropName="SolgteBolig" msprop:Generator_RowDeletingName="SolgteBoligRowDeleting" msprop:Generator_RowChangingName="SolgteBoligRowChanging" msprop:Generator_RowEvHandlerName="SolgteBoligRowChangeEventHandler" msprop:Generator_RowDeletedName="SolgteBoligRowDeleted" msprop:Generator_UserTableName="SolgteBolig" msprop:Generator_RowChangedName="SolgteBoligRowChanged" msprop:Generator_RowEvArgName="SolgteBoligRowChangeEvent" msprop:Generator_RowClassName="SolgteBoligRow">
+        <xs:element name="SolgteBolig" msprop:Generator_TableClassName="SolgteBoligDataTable" msprop:Generator_TableVarName="tableSolgteBolig" msprop:Generator_RowChangedName="SolgteBoligRowChanged" msprop:Generator_TablePropName="SolgteBolig" msprop:Generator_RowDeletingName="SolgteBoligRowDeleting" msprop:Generator_RowChangingName="SolgteBoligRowChanging" msprop:Generator_RowEvHandlerName="SolgteBoligRowChangeEventHandler" msprop:Generator_RowDeletedName="SolgteBoligRowDeleted" msprop:Generator_RowClassName="SolgteBoligRow" msprop:Generator_UserTableName="SolgteBolig" msprop:Generator_RowEvArgName="SolgteBoligRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="BoligID" msprop:Generator_ColumnVarNameInTable="columnBoligID" msprop:Generator_ColumnPropNameInRow="BoligID" msprop:Generator_ColumnPropNameInTable="BoligIDColumn" msprop:Generator_UserColumnName="BoligID" type="xs:int" />
@@ -507,7 +507,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sælger" msprop:Generator_TableClassName="SælgerDataTable" msprop:Generator_TableVarName="tableSælger" msprop:Generator_TablePropName="Sælger" msprop:Generator_RowDeletingName="SælgerRowDeleting" msprop:Generator_RowChangingName="SælgerRowChanging" msprop:Generator_RowEvHandlerName="SælgerRowChangeEventHandler" msprop:Generator_RowDeletedName="SælgerRowDeleted" msprop:Generator_UserTableName="Sælger" msprop:Generator_RowChangedName="SælgerRowChanged" msprop:Generator_RowEvArgName="SælgerRowChangeEvent" msprop:Generator_RowClassName="SælgerRow">
+        <xs:element name="Sælger" msprop:Generator_TableClassName="SælgerDataTable" msprop:Generator_TableVarName="tableSælger" msprop:Generator_RowChangedName="SælgerRowChanged" msprop:Generator_TablePropName="Sælger" msprop:Generator_RowDeletingName="SælgerRowDeleting" msprop:Generator_RowChangingName="SælgerRowChanging" msprop:Generator_RowEvHandlerName="SælgerRowChangeEventHandler" msprop:Generator_RowDeletedName="SælgerRowDeleted" msprop:Generator_RowClassName="SælgerRow" msprop:Generator_UserTableName="Sælger" msprop:Generator_RowEvArgName="SælgerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -574,9 +574,9 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_TilSalgSælger" msdata:parent="Sælger" msdata:child="BoligTilSalg" msdata:parentkey="ID" msdata:childkey="SælgerID" msprop:Generator_UserChildTable="BoligTilSalg" msprop:Generator_ChildPropName="GetBoligTilSalgRows" msprop:Generator_UserRelationName="FK_TilSalgSælger" msprop:Generator_RelationVarName="relationFK_TilSalgSælger" msprop:Generator_UserParentTable="Sælger" msprop:Generator_ParentPropName="SælgerRow" />
-      <msdata:Relationship name="FK_SolgtKøber" msdata:parent="Køber" msdata:child="SolgteBolig" msdata:parentkey="ID" msdata:childkey="KøberID" msprop:Generator_UserChildTable="SolgteBolig" msprop:Generator_ChildPropName="GetSolgteBoligRows" msprop:Generator_UserRelationName="FK_SolgtKøber" msprop:Generator_ParentPropName="KøberRow" msprop:Generator_RelationVarName="relationFK_SolgtKøber" msprop:Generator_UserParentTable="Køber" />
-      <msdata:Relationship name="FK_SolgtSælger" msdata:parent="Sælger" msdata:child="SolgteBolig" msdata:parentkey="ID" msdata:childkey="SælgerID" msprop:Generator_UserChildTable="SolgteBolig" msprop:Generator_ChildPropName="GetSolgteBoligRows" msprop:Generator_UserRelationName="FK_SolgtSælger" msprop:Generator_RelationVarName="relationFK_SolgtSælger" msprop:Generator_UserParentTable="Sælger" msprop:Generator_ParentPropName="SælgerRow" />
+      <msdata:Relationship name="FK_TilSalgSælger" msdata:parent="Sælger" msdata:child="BoligTilSalg" msdata:parentkey="ID" msdata:childkey="SælgerID" msprop:Generator_UserChildTable="BoligTilSalg" msprop:Generator_ChildPropName="GetBoligTilSalgRows" msprop:Generator_UserRelationName="FK_TilSalgSælger" msprop:Generator_ParentPropName="SælgerRow" msprop:Generator_RelationVarName="relationFK_TilSalgSælger" msprop:Generator_UserParentTable="Sælger" />
+      <msdata:Relationship name="FK_SolgtKøber" msdata:parent="Køber" msdata:child="SolgteBolig" msdata:parentkey="ID" msdata:childkey="KøberID" msprop:Generator_UserChildTable="SolgteBolig" msprop:Generator_ChildPropName="GetSolgteBoligRows" msprop:Generator_UserRelationName="FK_SolgtKøber" msprop:Generator_RelationVarName="relationFK_SolgtKøber" msprop:Generator_UserParentTable="Køber" msprop:Generator_ParentPropName="KøberRow" />
+      <msdata:Relationship name="FK_SolgtSælger" msdata:parent="Sælger" msdata:child="SolgteBolig" msdata:parentkey="ID" msdata:childkey="SælgerID" msprop:Generator_UserChildTable="SolgteBolig" msprop:Generator_ChildPropName="GetSolgteBoligRows" msprop:Generator_UserRelationName="FK_SolgtSælger" msprop:Generator_ParentPropName="SælgerRow" msprop:Generator_RelationVarName="relationFK_SolgtSælger" msprop:Generator_UserParentTable="Sælger" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

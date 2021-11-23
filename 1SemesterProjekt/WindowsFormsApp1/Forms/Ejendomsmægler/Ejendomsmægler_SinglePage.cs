@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Forms.Ejendomsmægler;
 
 namespace WindowsFormsApp1.Forms
 {
@@ -83,11 +84,11 @@ namespace WindowsFormsApp1.Forms
         private void button6_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            Ejendomsmægler_SletSælger SletSælger = new Ejendomsmægler_SletSælger();
-            SletSælger.TopLevel = false;
-            SletSælger.AutoScroll = true;
-            panel1.Controls.Add(SletSælger);
-            SletSælger.Show();
+            Ejendomsmægler_SletSælger OpdaterSælger = new Ejendomsmægler_SletSælger();
+            OpdaterSælger.TopLevel = false;
+            OpdaterSælger.AutoScroll = true;
+            panel1.Controls.Add(OpdaterSælger);
+            OpdaterSælger.Show();
         }
     }
 }

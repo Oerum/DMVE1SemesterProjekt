@@ -39,6 +39,7 @@ namespace WindowsFormsApp1.Forms
             this.oprettelsesDatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boligTilSalgBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ejendomsmæglerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ejendomsmæglerDataSet = new WindowsFormsApp1.EjendomsmæglerDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,15 +51,12 @@ namespace WindowsFormsApp1.Forms
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.boligTilSalgTableAdapter = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter();
             this.label6 = new System.Windows.Forms.Label();
-            this.ejendomsmæglerDataSet1 = new WindowsFormsApp1.EjendomsmæglerDataSet();
-            this.boligTilSalgBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.boligTilSalgTableAdapter1 = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -72,7 +70,7 @@ namespace WindowsFormsApp1.Forms
             this.m2DataGridViewTextBoxColumn,
             this.postNrDataGridViewTextBoxColumn,
             this.oprettelsesDatoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.boligTilSalgBindingSource1;
+            this.dataGridView1.DataSource = this.boligTilSalgBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(136, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(652, 391);
@@ -120,11 +118,21 @@ namespace WindowsFormsApp1.Forms
             this.boligTilSalgBindingSource.DataMember = "BoligTilSalg";
             this.boligTilSalgBindingSource.DataSource = this.ejendomsmæglerDataSetBindingSource;
             // 
+            // ejendomsmæglerDataSetBindingSource
+            // 
+            this.ejendomsmæglerDataSetBindingSource.DataSource = this.ejendomsmæglerDataSet;
+            this.ejendomsmæglerDataSetBindingSource.Position = 0;
+            // 
+            // ejendomsmæglerDataSet
+            // 
+            this.ejendomsmæglerDataSet.DataSetName = "EjendomsmæglerDataSet";
+            this.ejendomsmæglerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(12, 47);
+            this.label1.Location = new System.Drawing.Point(7, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 1;
@@ -134,7 +142,7 @@ namespace WindowsFormsApp1.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 117);
+            this.label2.Location = new System.Drawing.Point(7, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 25);
             this.label2.TabIndex = 2;
@@ -144,7 +152,7 @@ namespace WindowsFormsApp1.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(12, 180);
+            this.label3.Location = new System.Drawing.Point(7, 169);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 25);
             this.label3.TabIndex = 3;
@@ -154,7 +162,7 @@ namespace WindowsFormsApp1.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(12, 249);
+            this.label4.Location = new System.Drawing.Point(7, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 25);
             this.label4.TabIndex = 4;
@@ -164,7 +172,7 @@ namespace WindowsFormsApp1.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 319);
+            this.label5.Location = new System.Drawing.Point(7, 291);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 25);
             this.label5.TabIndex = 5;
@@ -172,48 +180,52 @@ namespace WindowsFormsApp1.Forms
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 75);
+            this.textBox1.Location = new System.Drawing.Point(12, 75);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(104, 20);
             this.textBox1.TabIndex = 6;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(17, 145);
+            this.textBox2.Location = new System.Drawing.Point(12, 135);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(104, 20);
             this.textBox2.TabIndex = 7;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(17, 208);
+            this.textBox3.Location = new System.Drawing.Point(12, 197);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(104, 20);
             this.textBox3.TabIndex = 8;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(17, 277);
+            this.textBox4.Location = new System.Drawing.Point(12, 258);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(104, 20);
             this.textBox4.TabIndex = 9;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(17, 347);
+            this.textBox5.Location = new System.Drawing.Point(12, 319);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(104, 20);
             this.textBox5.TabIndex = 10;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(17, 389);
+            this.button1.Location = new System.Drawing.Point(12, 396);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 49);
+            this.button1.Size = new System.Drawing.Size(104, 42);
             this.button1.TabIndex = 11;
             this.button1.Text = "Eksekver";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // boligTilSalgTableAdapter
+            // 
+            this.boligTilSalgTableAdapter.ClearBeforeFill = true;
             // 
             // label6
             // 
@@ -224,20 +236,6 @@ namespace WindowsFormsApp1.Forms
             this.label6.Size = new System.Drawing.Size(259, 31);
             this.label6.TabIndex = 13;
             this.label6.Text = "Oprettelse Af Bolig";
-            // 
-            // ejendomsmæglerDataSet1
-            // 
-            this.ejendomsmæglerDataSet1.DataSetName = "EjendomsmæglerDataSet";
-            this.ejendomsmæglerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // boligTilSalgBindingSource1
-            // 
-            this.boligTilSalgBindingSource1.DataMember = "BoligTilSalg";
-            this.boligTilSalgBindingSource1.DataSource = this.ejendomsmæglerDataSet1;
-            // 
-            // boligTilSalgTableAdapter1
-            // 
-            this.boligTilSalgTableAdapter1.ClearBeforeFill = true;
             // 
             // Ejendomsmægler_OpretBolig
             // 
@@ -261,12 +259,10 @@ namespace WindowsFormsApp1.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ejendomsmægler_OpretBolig";
             this.Text = "Ejendomsmægler";
-            this.Load += new System.EventHandler(this.Ejendomsmægler_OpretBolig_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,8 +293,5 @@ namespace WindowsFormsApp1.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn postNrDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oprettelsesDatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label6;
-        private EjendomsmæglerDataSet ejendomsmæglerDataSet1;
-        private System.Windows.Forms.BindingSource boligTilSalgBindingSource1;
-        private EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter boligTilSalgTableAdapter1;
     }
 }

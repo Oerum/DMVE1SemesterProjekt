@@ -9,14 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Forms
+namespace WindowsFormsApp1.Forms.Ejendomsmægler
 {
     public partial class Ejendomsmægler_OpdaterSælger : Form
     {
         public Ejendomsmægler_OpdaterSælger()
         {
             InitializeComponent();
-            this.sælgerTableAdapter.Fill(this.ejendomsmæglerDataSet.Sælger);
+            #region PassToGrid
+            DB db = new DB();
+            MySqlConnection conn = new MySqlConnection(db.ConnStr);
+            DataTable tbl = new DataTable();
+            string sqlshow = "SELECT * FROM Sælger;";
+            MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
+            conn.Open();
+            tbl.Load(cmd1.ExecuteReader());
+            dataGridView1.DataSource = tbl;
+            conn.Close();
+            #endregion PassToGrid
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -25,7 +35,8 @@ namespace WindowsFormsApp1.Forms
             string Tlf = "";
             string Fornavn = "";
             string Efternavn = "";
-
+            string Brugernavn = "";
+            string Kodeord = "";
             try
             {
                 DB db = new DB();
@@ -33,11 +44,11 @@ namespace WindowsFormsApp1.Forms
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
 
-                string sql = "SELECT * FROM Sælger WHERE ID = @BoligID;";
+                string sql = "SELECT * FROM Sælger WHERE ID = @ID;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
+                cmd.Parameters.AddWithValue("@ID", int.Parse(textBox1.Text));
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -49,6 +60,8 @@ namespace WindowsFormsApp1.Forms
                     Tlf = Convert.ToString(rdr[1]);
                     Fornavn = Convert.ToString(rdr[2]);
                     Efternavn = Convert.ToString(rdr[3]);
+                    Brugernavn = Convert.ToString(rdr[4]);
+                    Kodeord = Convert.ToString(rdr[5]);
                 }
                 rdr.Close();
                 conn.Close();
@@ -56,6 +69,9 @@ namespace WindowsFormsApp1.Forms
                 textBox2.Text = Tlf;
                 textBox3.Text = Fornavn;
                 textBox4.Text = Efternavn;
+                textBox5.Text = Brugernavn;
+                textBox6.Text = Kodeord;
+
             }
             catch (Exception ex)
             {
@@ -70,16 +86,27 @@ namespace WindowsFormsApp1.Forms
                 DB db = new DB();
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
-                string sql = "UPDATE Sælger SET Tlf = @Tlf, Fornavn = @Fornavn, Efternavn = @Efternavn WHERE ID = @ID;";
+                string sql = "UPDATE Sælger SET Tlf = @Tlf, Fornavn = @Fornavn, Efternavn = @Efternavn, Brugernavn = @Brugernavn, Kodeord = HEX(AES_ENCRYPT(@Kodeord, 'somethingfunnyhere')) WHERE ID = @ID;";
+
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@ID", int.Parse(textBox1.Text));
-                cmd.Parameters.AddWithValue("@Tlf", int.Parse(textBox2.Text));
-                cmd.Parameters.AddWithValue("@Fornavn", int.Parse(textBox3.Text));
-                cmd.Parameters.AddWithValue("@Efternavn", int.Parse(textBox4.Text));
+                cmd.Parameters.AddWithValue("@Tlf", textBox2.Text);
+                cmd.Parameters.AddWithValue("@Fornavn", textBox3.Text);
+                cmd.Parameters.AddWithValue("@Efternavn", textBox4.Text);
+                cmd.Parameters.AddWithValue("@Brugernavn", textBox5.Text);
+                cmd.Parameters.AddWithValue("@Kodeord", textBox6.Text);
 
                 conn.Open();
-                cmd.ExecuteNonQuery();
+
+                if (textBox1.Text != null && textBox2.Text != null && textBox3.Text != null && textBox4.Text != null && textBox5.Text != null && textBox6.Text != null)
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    MessageBox.Show("Indtast gyldig information i alle kolonner");
+                }
 
                 #region PassToGrid
                 DataTable tbl = new DataTable();
@@ -96,17 +123,6 @@ namespace WindowsFormsApp1.Forms
             {
                 MessageBox.Show($"{ex}");
             }
-        }
-
-        private void Ejendomsmægler_OpdaterSælger_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet2.Sælger' table. You can move, or remove it, as needed.
-            this.sælgerTableAdapter2.Fill(this.ejendomsmæglerDataSet2.Sælger);
-            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet1.Sælger' table. You can move, or remove it, as needed.
-            this.sælgerTableAdapter1.Fill(this.ejendomsmæglerDataSet1.Sælger);
-            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet.Sælger' table. You can move, or remove it, as needed.
-            this.sælgerTableAdapter.Fill(this.ejendomsmæglerDataSet.Sælger);
-
         }
     }
 }

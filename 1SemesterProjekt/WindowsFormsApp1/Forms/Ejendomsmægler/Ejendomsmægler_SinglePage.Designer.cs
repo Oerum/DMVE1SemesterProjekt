@@ -52,7 +52,7 @@ namespace WindowsFormsApp1.Forms
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(238, 12);
+            this.button2.Location = new System.Drawing.Point(273, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 24);
             this.button2.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace WindowsFormsApp1.Forms
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(117, 12);
+            this.button3.Location = new System.Drawing.Point(137, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 24);
             this.button3.TabIndex = 2;
@@ -76,13 +76,13 @@ namespace WindowsFormsApp1.Forms
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 451);
+            this.panel1.Size = new System.Drawing.Size(776, 459);
             this.panel1.TabIndex = 3;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(343, 12);
+            this.button4.Location = new System.Drawing.Point(395, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(116, 24);
             this.button4.TabIndex = 4;
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1.Forms
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(465, 12);
+            this.button5.Location = new System.Drawing.Point(532, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(130, 24);
             this.button5.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace WindowsFormsApp1.Forms
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(601, 12);
+            this.button6.Location = new System.Drawing.Point(685, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(101, 24);
             this.button6.TabIndex = 6;
