@@ -104,73 +104,10 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void Ejendomsmægler_OpdaterBolig_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ejendomsmæglerDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void boligTilSalgBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet1.BoligTilSalg' table. You can move, or remove it, as needed.
+            this.boligTilSalgTableAdapter1.Fill(this.ejendomsmæglerDataSet1.BoligTilSalg);
 
         }
     }

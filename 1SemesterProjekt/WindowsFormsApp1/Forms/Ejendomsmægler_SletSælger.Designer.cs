@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1.Forms
 {
-    partial class Ejendomsmægler_SletBolig
+    partial class Ejendomsmægler_SletSælger
     {
         /// <summary>
         /// Required designer variable.
@@ -33,24 +33,24 @@ namespace WindowsFormsApp1.Forms
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.boligIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sælgerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.m2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postNrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boligTilSalgBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ejendomsmæglerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.oprettelsesDatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fornavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.efternavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sælgerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ejendomsmæglerDataSet1 = new WindowsFormsApp1.EjendomsmæglerDataSet();
-            this.boligTilSalgBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.boligTilSalgTableAdapter1 = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter();
+            this.sælgerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sælgerTableAdapter1 = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.SælgerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sælgerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sælgerBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -59,16 +59,16 @@ namespace WindowsFormsApp1.Forms
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(315, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(229, 31);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "Sletning Af Bolig";
+            this.label6.Size = new System.Drawing.Size(257, 31);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Sletning Af Sælger";
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(14, 217);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 42);
-            this.button1.TabIndex = 39;
+            this.button1.TabIndex = 45;
             this.button1.Text = "Eksekver";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -78,37 +78,7 @@ namespace WindowsFormsApp1.Forms
             this.textBox1.Location = new System.Drawing.Point(13, 191);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(104, 20);
-            this.textBox1.TabIndex = 34;
-            // 
-            // boligIDDataGridViewTextBoxColumn
-            // 
-            this.boligIDDataGridViewTextBoxColumn.DataPropertyName = "BoligID";
-            this.boligIDDataGridViewTextBoxColumn.HeaderText = "BoligID";
-            this.boligIDDataGridViewTextBoxColumn.Name = "boligIDDataGridViewTextBoxColumn";
-            // 
-            // sælgerIDDataGridViewTextBoxColumn
-            // 
-            this.sælgerIDDataGridViewTextBoxColumn.DataPropertyName = "SælgerID";
-            this.sælgerIDDataGridViewTextBoxColumn.HeaderText = "SælgerID";
-            this.sælgerIDDataGridViewTextBoxColumn.Name = "sælgerIDDataGridViewTextBoxColumn";
-            // 
-            // prisDataGridViewTextBoxColumn
-            // 
-            this.prisDataGridViewTextBoxColumn.DataPropertyName = "Pris";
-            this.prisDataGridViewTextBoxColumn.HeaderText = "Pris";
-            this.prisDataGridViewTextBoxColumn.Name = "prisDataGridViewTextBoxColumn";
-            // 
-            // m2DataGridViewTextBoxColumn
-            // 
-            this.m2DataGridViewTextBoxColumn.DataPropertyName = "M2";
-            this.m2DataGridViewTextBoxColumn.HeaderText = "M2";
-            this.m2DataGridViewTextBoxColumn.Name = "m2DataGridViewTextBoxColumn";
-            // 
-            // postNrDataGridViewTextBoxColumn
-            // 
-            this.postNrDataGridViewTextBoxColumn.DataPropertyName = "PostNr";
-            this.postNrDataGridViewTextBoxColumn.HeaderText = "PostNr";
-            this.postNrDataGridViewTextBoxColumn.Name = "postNrDataGridViewTextBoxColumn";
+            this.textBox1.TabIndex = 44;
             // 
             // boligTilSalgBindingSource
             // 
@@ -121,67 +91,92 @@ namespace WindowsFormsApp1.Forms
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(10, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 24);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "BoligID";
-            // 
-            // oprettelsesDatoDataGridViewTextBoxColumn
-            // 
-            this.oprettelsesDatoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.oprettelsesDatoDataGridViewTextBoxColumn.DataPropertyName = "OprettelsesDato";
-            this.oprettelsesDatoDataGridViewTextBoxColumn.HeaderText = "OprettelsesDato";
-            this.oprettelsesDatoDataGridViewTextBoxColumn.Name = "oprettelsesDatoDataGridViewTextBoxColumn";
+            this.label1.Size = new System.Drawing.Size(29, 24);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "ID";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.boligIDDataGridViewTextBoxColumn,
-            this.sælgerIDDataGridViewTextBoxColumn,
-            this.prisDataGridViewTextBoxColumn,
-            this.m2DataGridViewTextBoxColumn,
-            this.postNrDataGridViewTextBoxColumn,
-            this.oprettelsesDatoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.boligTilSalgBindingSource1;
+            this.iDDataGridViewTextBoxColumn,
+            this.tlfDataGridViewTextBoxColumn,
+            this.fornavnDataGridViewTextBoxColumn,
+            this.efternavnDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.sælgerBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(138, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(652, 391);
-            this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.TabIndex = 42;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // tlfDataGridViewTextBoxColumn
+            // 
+            this.tlfDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tlfDataGridViewTextBoxColumn.DataPropertyName = "Tlf";
+            this.tlfDataGridViewTextBoxColumn.HeaderText = "Tlf";
+            this.tlfDataGridViewTextBoxColumn.Name = "tlfDataGridViewTextBoxColumn";
+            // 
+            // fornavnDataGridViewTextBoxColumn
+            // 
+            this.fornavnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.fornavnDataGridViewTextBoxColumn.DataPropertyName = "Fornavn";
+            this.fornavnDataGridViewTextBoxColumn.HeaderText = "Fornavn";
+            this.fornavnDataGridViewTextBoxColumn.Name = "fornavnDataGridViewTextBoxColumn";
+            // 
+            // efternavnDataGridViewTextBoxColumn
+            // 
+            this.efternavnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.efternavnDataGridViewTextBoxColumn.DataPropertyName = "Efternavn";
+            this.efternavnDataGridViewTextBoxColumn.HeaderText = "Efternavn";
+            this.efternavnDataGridViewTextBoxColumn.Name = "efternavnDataGridViewTextBoxColumn";
+            // 
+            // sælgerBindingSource
+            // 
+            this.sælgerBindingSource.DataMember = "Sælger";
+            this.sælgerBindingSource.DataSource = this.ejendomsmæglerDataSetBindingSource;
             // 
             // ejendomsmæglerDataSet1
             // 
             this.ejendomsmæglerDataSet1.DataSetName = "EjendomsmæglerDataSet";
             this.ejendomsmæglerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // boligTilSalgBindingSource1
+            // sælgerBindingSource1
             // 
-            this.boligTilSalgBindingSource1.DataMember = "BoligTilSalg";
-            this.boligTilSalgBindingSource1.DataSource = this.ejendomsmæglerDataSet1;
+            this.sælgerBindingSource1.DataMember = "Sælger";
+            this.sælgerBindingSource1.DataSource = this.ejendomsmæglerDataSet1;
             // 
-            // boligTilSalgTableAdapter1
+            // sælgerTableAdapter1
             // 
-            this.boligTilSalgTableAdapter1.ClearBeforeFill = true;
+            this.sælgerTableAdapter1.ClearBeforeFill = true;
             // 
-            // Ejendomsmægler_SletBolig
+            // Ejendomsmægler_SletSælger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 446);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Ejendomsmægler_SletBolig";
-            this.Text = "Ejendomsmægler_SletBolig";
-            this.Load += new System.EventHandler(this.Ejendomsmægler_SletBolig_Load);
+            this.Name = "Ejendomsmægler_SletSælger";
+            this.Text = "Ejendomsmægler_SletSælger";
+            this.Load += new System.EventHandler(this.Ejendomsmægler_SletSælger_Load);
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sælgerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sælgerBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,20 +187,20 @@ namespace WindowsFormsApp1.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boligIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sælgerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn m2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn postNrDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource boligTilSalgBindingSource;
         private System.Windows.Forms.BindingSource ejendomsmæglerDataSetBindingSource;
         private EjendomsmæglerDataSet ejendomsmæglerDataSet;
         private System.Windows.Forms.Label label1;
         private EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter boligTilSalgTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oprettelsesDatoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource sælgerBindingSource;
+        private EjendomsmæglerDataSetTableAdapters.SælgerTableAdapter sælgerTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tlfDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fornavnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn efternavnDataGridViewTextBoxColumn;
         private EjendomsmæglerDataSet ejendomsmæglerDataSet1;
-        private System.Windows.Forms.BindingSource boligTilSalgBindingSource1;
-        private EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter boligTilSalgTableAdapter1;
+        private System.Windows.Forms.BindingSource sælgerBindingSource1;
+        private EjendomsmæglerDataSetTableAdapters.SælgerTableAdapter sælgerTableAdapter1;
     }
 }

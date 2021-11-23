@@ -101,6 +101,12 @@
     <Compile Include="Forms\Ejendomsmægler_OpdaterBolig.Designer.cs">
       <DependentUpon>Ejendomsmægler_OpdaterBolig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ejendomsmægler_OpdaterSælger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ejendomsmægler_OpdaterSælger.Designer.cs">
+      <DependentUpon>Ejendomsmægler_OpdaterSælger.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ejendomsmægler_OpretBolig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     <Compile Include="Forms\Ejendomsmægler_SletBolig.Designer.cs">
       <DependentUpon>Ejendomsmægler_SletBolig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ejendomsmægler_SletSælger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ejendomsmægler_SletSælger.Designer.cs">
+      <DependentUpon>Ejendomsmægler_SletSælger.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,9 @@
     <EmbeddedResource Include="Forms\Ejendomsmægler_OpdaterBolig.resx">
       <DependentUpon>Ejendomsmægler_OpdaterBolig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ejendomsmægler_OpdaterSælger.resx">
+      <DependentUpon>Ejendomsmægler_OpdaterSælger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler_OpretBolig.resx">
       <DependentUpon>Ejendomsmægler_OpretBolig.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler_SletBolig.resx">
       <DependentUpon>Ejendomsmægler_SletBolig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ejendomsmægler_SletSælger.resx">
+      <DependentUpon>Ejendomsmægler_SletSælger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

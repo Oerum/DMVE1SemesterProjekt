@@ -43,7 +43,6 @@ namespace WindowsFormsApp1.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ejendomsmæglerDataSet = new WindowsFormsApp1.EjendomsmæglerDataSet();
             this.ejendomsmæglerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.boligTilSalgBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oprettelsesDatoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,12 +51,15 @@ namespace WindowsFormsApp1.Forms
             this.prisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sælgerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boligIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boligTilSalgTableAdapter = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).BeginInit();
+            this.ejendomsmæglerDataSet1 = new WindowsFormsApp1.EjendomsmæglerDataSet();
+            this.boligTilSalgBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.boligTilSalgTableAdapter1 = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -69,7 +71,6 @@ namespace WindowsFormsApp1.Forms
             this.label6.Size = new System.Drawing.Size(267, 31);
             this.label6.TabIndex = 27;
             this.label6.Text = "Opdatering Af Bolig";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button2
             // 
@@ -97,7 +98,6 @@ namespace WindowsFormsApp1.Forms
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(104, 20);
             this.textBox5.TabIndex = 24;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox4
             // 
@@ -105,7 +105,6 @@ namespace WindowsFormsApp1.Forms
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(104, 20);
             this.textBox4.TabIndex = 23;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
@@ -113,7 +112,6 @@ namespace WindowsFormsApp1.Forms
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(104, 20);
             this.textBox3.TabIndex = 22;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
             // 
@@ -121,7 +119,6 @@ namespace WindowsFormsApp1.Forms
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(104, 20);
             this.textBox2.TabIndex = 21;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -129,7 +126,6 @@ namespace WindowsFormsApp1.Forms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(104, 20);
             this.textBox1.TabIndex = 20;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -140,7 +136,6 @@ namespace WindowsFormsApp1.Forms
             this.label5.Size = new System.Drawing.Size(72, 24);
             this.label5.TabIndex = 19;
             this.label5.Text = "PostNr";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -151,7 +146,6 @@ namespace WindowsFormsApp1.Forms
             this.label4.Size = new System.Drawing.Size(38, 24);
             this.label4.TabIndex = 18;
             this.label4.Text = "M2";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -162,7 +156,6 @@ namespace WindowsFormsApp1.Forms
             this.label3.Size = new System.Drawing.Size(45, 24);
             this.label3.TabIndex = 17;
             this.label3.Text = "Pris";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -173,7 +166,6 @@ namespace WindowsFormsApp1.Forms
             this.label2.Size = new System.Drawing.Size(96, 24);
             this.label2.TabIndex = 16;
             this.label2.Text = "SælgerID";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -184,24 +176,11 @@ namespace WindowsFormsApp1.Forms
             this.label1.Size = new System.Drawing.Size(76, 24);
             this.label1.TabIndex = 15;
             this.label1.Text = "BoligID";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // ejendomsmæglerDataSet
-            // 
-            this.ejendomsmæglerDataSet.DataSetName = "EjendomsmæglerDataSet";
-            this.ejendomsmæglerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ejendomsmæglerDataSetBindingSource
-            // 
-            this.ejendomsmæglerDataSetBindingSource.DataSource = this.ejendomsmæglerDataSet;
-            this.ejendomsmæglerDataSetBindingSource.Position = 0;
-            this.ejendomsmæglerDataSetBindingSource.CurrentChanged += new System.EventHandler(this.ejendomsmæglerDataSetBindingSource_CurrentChanged);
             // 
             // boligTilSalgBindingSource
             // 
             this.boligTilSalgBindingSource.DataMember = "BoligTilSalg";
             this.boligTilSalgBindingSource.DataSource = this.ejendomsmæglerDataSetBindingSource;
-            this.boligTilSalgBindingSource.CurrentChanged += new System.EventHandler(this.boligTilSalgBindingSource_CurrentChanged);
             // 
             // oprettelsesDatoDataGridViewTextBoxColumn
             // 
@@ -240,10 +219,6 @@ namespace WindowsFormsApp1.Forms
             this.boligIDDataGridViewTextBoxColumn.HeaderText = "BoligID";
             this.boligIDDataGridViewTextBoxColumn.Name = "boligIDDataGridViewTextBoxColumn";
             // 
-            // boligTilSalgTableAdapter
-            // 
-            this.boligTilSalgTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -255,12 +230,25 @@ namespace WindowsFormsApp1.Forms
             this.m2DataGridViewTextBoxColumn,
             this.postNrDataGridViewTextBoxColumn,
             this.oprettelsesDatoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.boligTilSalgBindingSource;
+            this.dataGridView1.DataSource = this.boligTilSalgBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(139, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(652, 391);
             this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ejendomsmæglerDataSet1
+            // 
+            this.ejendomsmæglerDataSet1.DataSetName = "EjendomsmæglerDataSet";
+            this.ejendomsmæglerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // boligTilSalgBindingSource1
+            // 
+            this.boligTilSalgBindingSource1.DataMember = "BoligTilSalg";
+            this.boligTilSalgBindingSource1.DataSource = this.ejendomsmæglerDataSet1;
+            // 
+            // boligTilSalgTableAdapter1
+            // 
+            this.boligTilSalgTableAdapter1.ClearBeforeFill = true;
             // 
             // Ejendomsmægler_OpdaterBolig
             // 
@@ -284,10 +272,12 @@ namespace WindowsFormsApp1.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ejendomsmægler_OpdaterBolig";
             this.Text = "Ejendomsmægler_OpdaterBolig";
-            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).EndInit();
+            this.Load += new System.EventHandler(this.Ejendomsmægler_OpdaterBolig_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +309,8 @@ namespace WindowsFormsApp1.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn boligIDDataGridViewTextBoxColumn;
         private EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter boligTilSalgTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private EjendomsmæglerDataSet ejendomsmæglerDataSet1;
+        private System.Windows.Forms.BindingSource boligTilSalgBindingSource1;
+        private EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter boligTilSalgTableAdapter1;
     }
 }

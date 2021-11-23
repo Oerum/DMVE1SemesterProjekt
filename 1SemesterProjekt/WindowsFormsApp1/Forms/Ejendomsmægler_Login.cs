@@ -65,6 +65,10 @@ namespace WindowsFormsApp1.Forms
                     Ej.Show();
                     this.Hide();
                 }
+                else
+                {
+                    MessageBox.Show("Du har indtastet forkerte oplysninger");
+                }
             }
             catch (Exception ex)
             {

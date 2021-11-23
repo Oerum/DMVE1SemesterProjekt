@@ -63,13 +63,31 @@ namespace WindowsFormsApp1.Forms
         private void button4_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
-            Ejendomsmægler_SletBolig OpretSælger = new Ejendomsmægler_SletBolig();
+            Ejendomsmægler_OpretSælger OpretSælger = new Ejendomsmægler_OpretSælger();
             OpretSælger.TopLevel = false;
             OpretSælger.AutoScroll = true;
             panel1.Controls.Add(OpretSælger);
             OpretSælger.Show();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Ejendomsmægler_OpdaterSælger OpdaterSælger = new Ejendomsmægler_OpdaterSælger();
+            OpdaterSælger.TopLevel = false;
+            OpdaterSælger.AutoScroll = true;
+            panel1.Controls.Add(OpdaterSælger);
+            OpdaterSælger.Show();
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Ejendomsmægler_SletSælger SletSælger = new Ejendomsmægler_SletSælger();
+            SletSælger.TopLevel = false;
+            SletSælger.AutoScroll = true;
+            panel1.Controls.Add(SletSælger);
+            SletSælger.Show();
+        }
     }
 }

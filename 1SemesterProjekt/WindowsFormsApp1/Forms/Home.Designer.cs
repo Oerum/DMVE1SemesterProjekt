@@ -54,9 +54,6 @@ namespace WindowsFormsApp1.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // boligTilSalgTableAdapter1
-            // 
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(160, 76);

@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Forms
 {
-    public partial class Ejendomsmægler_SletBolig : Form
+    public partial class Ejendomsmægler_SletSælger : Form
     {
-        public Ejendomsmægler_SletBolig()
+        public Ejendomsmægler_SletSælger()
         {
             InitializeComponent();
-            this.boligTilSalgTableAdapter.Fill(this.ejendomsmæglerDataSet.BoligTilSalg);
+            this.sælgerTableAdapter.Fill(this.ejendomsmæglerDataSet.Sælger);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,17 +27,17 @@ namespace WindowsFormsApp1.Forms
                 DB db = new DB();
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
-                string sql = "DELETE FROM BoligTilSalg WHERE BoligID = @BoligID;";
+                string sql = "DELETE FROM Sælger WHERE ID = @ID;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
+                cmd.Parameters.AddWithValue("@ID", int.Parse(textBox1.Text));
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
 
                 #region PassToGrid
                 DataTable tbl = new DataTable();
-                string sqlshow = "SELECT * FROM BoligTilSalg";
+                string sqlshow = "SELECT * FROM Sælger";
                 MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
                 tbl.Load(cmd1.ExecuteReader());
                 dataGridView1.DataSource = tbl;
@@ -51,10 +52,10 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
-        private void Ejendomsmægler_SletBolig_Load(object sender, EventArgs e)
+        private void Ejendomsmægler_SletSælger_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet1.BoligTilSalg' table. You can move, or remove it, as needed.
-            this.boligTilSalgTableAdapter1.Fill(this.ejendomsmæglerDataSet1.BoligTilSalg);
+            // TODO: This line of code loads data into the 'ejendomsmæglerDataSet1.Sælger' table. You can move, or remove it, as needed.
+            this.sælgerTableAdapter1.Fill(this.ejendomsmæglerDataSet1.Sælger);
 
         }
     }

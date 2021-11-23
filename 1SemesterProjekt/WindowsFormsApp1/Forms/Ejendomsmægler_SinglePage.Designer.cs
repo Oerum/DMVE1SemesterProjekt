@@ -99,6 +99,7 @@ namespace WindowsFormsApp1.Forms
             this.button5.TabIndex = 5;
             this.button5.Text = "Opdater Sælger";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -109,6 +110,7 @@ namespace WindowsFormsApp1.Forms
             this.button6.TabIndex = 6;
             this.button6.Text = "Slet Sælger";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Ejendomsmægler_SinglePage
             // 
