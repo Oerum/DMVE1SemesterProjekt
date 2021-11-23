@@ -49,5 +49,20 @@ namespace WindowsFormsApp1.Forms
             panel1.Controls.Add(OpdaterBolig);
             OpdaterBolig.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Ejendomsmægler_SletBolig SletBolig = new Ejendomsmægler_SletBolig();
+            SletBolig.TopLevel = false;
+            SletBolig.AutoScroll = true;
+            panel1.Controls.Add(SletBolig);
+            SletBolig.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -69,6 +69,7 @@ namespace WindowsFormsApp1.Forms
             this.label6.Size = new System.Drawing.Size(267, 31);
             this.label6.TabIndex = 27;
             this.label6.Text = "Opdatering Af Bolig";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button2
             // 
@@ -96,6 +97,7 @@ namespace WindowsFormsApp1.Forms
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(104, 20);
             this.textBox5.TabIndex = 24;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox4
             // 
@@ -103,6 +105,7 @@ namespace WindowsFormsApp1.Forms
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(104, 20);
             this.textBox4.TabIndex = 23;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
@@ -110,6 +113,7 @@ namespace WindowsFormsApp1.Forms
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(104, 20);
             this.textBox3.TabIndex = 22;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox2
             // 
@@ -117,6 +121,7 @@ namespace WindowsFormsApp1.Forms
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(104, 20);
             this.textBox2.TabIndex = 21;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -124,6 +129,7 @@ namespace WindowsFormsApp1.Forms
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(104, 20);
             this.textBox1.TabIndex = 20;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -134,6 +140,7 @@ namespace WindowsFormsApp1.Forms
             this.label5.Size = new System.Drawing.Size(72, 24);
             this.label5.TabIndex = 19;
             this.label5.Text = "PostNr";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -144,6 +151,7 @@ namespace WindowsFormsApp1.Forms
             this.label4.Size = new System.Drawing.Size(38, 24);
             this.label4.TabIndex = 18;
             this.label4.Text = "M2";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -154,6 +162,7 @@ namespace WindowsFormsApp1.Forms
             this.label3.Size = new System.Drawing.Size(45, 24);
             this.label3.TabIndex = 17;
             this.label3.Text = "Pris";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -164,6 +173,7 @@ namespace WindowsFormsApp1.Forms
             this.label2.Size = new System.Drawing.Size(96, 24);
             this.label2.TabIndex = 16;
             this.label2.Text = "SælgerID";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -174,6 +184,7 @@ namespace WindowsFormsApp1.Forms
             this.label1.Size = new System.Drawing.Size(76, 24);
             this.label1.TabIndex = 15;
             this.label1.Text = "BoligID";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ejendomsmæglerDataSet
             // 
@@ -184,11 +195,13 @@ namespace WindowsFormsApp1.Forms
             // 
             this.ejendomsmæglerDataSetBindingSource.DataSource = this.ejendomsmæglerDataSet;
             this.ejendomsmæglerDataSetBindingSource.Position = 0;
+            this.ejendomsmæglerDataSetBindingSource.CurrentChanged += new System.EventHandler(this.ejendomsmæglerDataSetBindingSource_CurrentChanged);
             // 
             // boligTilSalgBindingSource
             // 
             this.boligTilSalgBindingSource.DataMember = "BoligTilSalg";
             this.boligTilSalgBindingSource.DataSource = this.ejendomsmæglerDataSetBindingSource;
+            this.boligTilSalgBindingSource.CurrentChanged += new System.EventHandler(this.boligTilSalgBindingSource_CurrentChanged);
             // 
             // oprettelsesDatoDataGridViewTextBoxColumn
             // 
@@ -247,6 +260,7 @@ namespace WindowsFormsApp1.Forms
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(652, 391);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Ejendomsmægler_OpdaterBolig
             // 

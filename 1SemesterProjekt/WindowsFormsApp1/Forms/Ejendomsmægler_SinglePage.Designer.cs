@@ -58,6 +58,7 @@ namespace WindowsFormsApp1.Forms
             this.button2.TabIndex = 1;
             this.button2.Text = "Slet Bolig";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -87,6 +88,7 @@ namespace WindowsFormsApp1.Forms
             this.button4.TabIndex = 4;
             this.button4.Text = "Opret Sælger";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
