@@ -11,9 +11,9 @@ using WindowsFormsApp1.Forms.Ejendomsmægler;
 
 namespace WindowsFormsApp1.Forms
 {
-    public partial class Ejendomsmægler_SinglePage : Form
+    public partial class Ejendomsmælger_SinglePage : Form
     {
-        public Ejendomsmægler_SinglePage()
+        public Ejendomsmælger_SinglePage()
         {
             InitializeComponent();
             panel1.Controls.Clear();

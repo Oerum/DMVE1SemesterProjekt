@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Forms.Sælger;
 
 namespace WindowsFormsApp1.Forms
 {
@@ -30,6 +31,13 @@ namespace WindowsFormsApp1.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             Ejendomsmægler_Login login = new Ejendomsmægler_Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Sælger_Login login = new Sælger_Login();
             login.Show();
             this.Hide();
         }

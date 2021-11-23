@@ -155,6 +155,24 @@
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.Designer.cs">
       <DependentUpon>Ejendomsmægler_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Sælger\Sælger_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sælger\Sælger_Login.Designer.cs">
+      <DependentUpon>Sælger_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sælger\Sælger_OpdaterBolig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sælger\Sælger_OpdaterBolig.Designer.cs">
+      <DependentUpon>Sælger_OpdaterBolig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sælger\Sælger_SingePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Sælger\Sælger_SingePage.Designer.cs">
+      <DependentUpon>Sælger_SingePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterBolig.resx">
@@ -186,6 +204,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.resx">
       <DependentUpon>Ejendomsmægler_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sælger\Sælger_Login.resx">
+      <DependentUpon>Sælger_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sælger\Sælger_OpdaterBolig.resx">
+      <DependentUpon>Sælger_OpdaterBolig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Sælger\Sælger_SingePage.resx">
+      <DependentUpon>Sælger_SingePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

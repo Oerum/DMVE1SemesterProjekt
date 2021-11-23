@@ -32,10 +32,13 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\Windo
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Home.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Kunder.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_OpretBolig.resources
-C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_SinglePage.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_Login.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_OpdaterBolig.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_SletBolig.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_OpretSælger.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_OpdaterSælger.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_SletSælger.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger_Login.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger_OpdaterBolig.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger_SingePage.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmælger_SinglePage.resources

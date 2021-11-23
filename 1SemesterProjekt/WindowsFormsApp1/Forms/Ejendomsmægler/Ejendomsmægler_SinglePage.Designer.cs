@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1.Forms
 {
-    partial class Ejendomsmægler_SinglePage
+    partial class Ejendomsmælger_SinglePage
     {
         /// <summary>
         /// Required designer variable.

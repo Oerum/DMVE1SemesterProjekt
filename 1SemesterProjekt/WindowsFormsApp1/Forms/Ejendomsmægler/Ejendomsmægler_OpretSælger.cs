@@ -38,13 +38,12 @@ namespace WindowsFormsApp1.Forms
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
 
-                string sql = "INSERT INTO Sælger(ID, Tlf, Fornavn, Efternavn, Brugernavn, Kodeord) " +
-                             "VALUES (@ID, @Tlf, @Fornavn, @Efternavn, @Brugernavn, HEX(AES_ENCRYPT(@Kodeord, 'somethingfunnyhere')));";
+                string sql = "INSERT INTO Sælger(Tlf, Fornavn, Efternavn, Brugernavn, Kodeord) " +
+                             "VALUES (@Tlf, @Fornavn, @Efternavn, @Brugernavn, HEX(AES_ENCRYPT(@Kodeord, 'somethingfunnyhere')));";
 
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@ID", int.Parse(textBox1.Text));
                 cmd.Parameters.AddWithValue("@Tlf", textBox2.Text);
                 cmd.Parameters.AddWithValue("@Fornavn", textBox3.Text);
                 cmd.Parameters.AddWithValue("@Efternavn", textBox4.Text);

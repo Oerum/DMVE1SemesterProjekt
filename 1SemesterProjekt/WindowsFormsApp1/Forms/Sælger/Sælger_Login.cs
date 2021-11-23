@@ -9,12 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Forms
+namespace WindowsFormsApp1.Forms.Sælger
 {
-    public partial class Ejendomsmægler_Login : Form
+    public partial class Sælger_Login : Form
     {
-
-        public Ejendomsmægler_Login()
+        public static string Sælger_ID_LoggedIn { get; set; }
+        public Sælger_Login()
         {
             InitializeComponent();
         }
@@ -37,28 +37,29 @@ namespace WindowsFormsApp1.Forms
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
 
-                string sql = "SELECT Brugernavn, CAST(AES_DECRYPT(UNHEX(Kodeord), 'somethingfunnyhere') as varchar(100)) as 'Kodeord' FROM Ejendomsmaegler WHERE Brugernavn = Brugernavn;";
+                string sql = "SELECT Brugernavn, CAST(AES_DECRYPT(UNHEX(Kodeord), 'somethingfunnyhere') as varchar(100)) as 'Kodeord', ID FROM Sælger WHERE Brugernavn = Brugernavn;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@Brugernavn", textBox1.Text);
 
                 conn.Open();
-                
+
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 while (rdr.Read())
                 {
                     UserName = Convert.ToString(rdr[0]);
                     PassWord = Convert.ToString(rdr[1]);
+                    Sælger_ID_LoggedIn = Convert.ToString(rdr[2]);
 
                 }
                 rdr.Close();
 
                 if (textBox1.Text == UserName && textBox2.Text == PassWord)
                 {
-                    Ejendomsmælger_SinglePage Ej = new Ejendomsmægler_SingePage();
-                    Ej.Show();
+                    Sælger_SingePage SP = new Sælger_SingePage();
+                    SP.Show();
                     this.Hide();
                 }
                 else
@@ -70,10 +71,6 @@ namespace WindowsFormsApp1.Forms
             {
                 MessageBox.Show($"{ex}");
             }
-        }
-
-        private class Ejendomsmægler_SingePage : Ejendomsmælger_SinglePage
-        {
         }
     }
 }

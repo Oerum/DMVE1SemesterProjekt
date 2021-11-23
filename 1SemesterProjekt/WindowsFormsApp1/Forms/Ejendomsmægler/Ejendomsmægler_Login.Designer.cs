@@ -81,7 +81,7 @@ namespace WindowsFormsApp1.Forms
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Login
+            // Ejendomsmægler_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,8 +92,8 @@ namespace WindowsFormsApp1.Forms
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Login";
-            this.Text = "Login";
+            this.Name = "Ejendomsmægler_Login";
+            this.Text = "Ejendomsmægler Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
