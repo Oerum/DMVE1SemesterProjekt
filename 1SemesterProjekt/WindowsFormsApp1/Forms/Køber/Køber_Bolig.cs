@@ -12,21 +12,33 @@ using System.Windows.Forms;
 namespace WindowsFormsApp1.Forms.Køber
 {
     public partial class Køber_Bolig : Form
-    {
+    {  
         public Køber_Bolig()
         {
+            string Brugernavn = "";
             InitializeComponent();
-            #region PassToGrid
-            DB db = new DB();
-            MySqlConnection conn = new MySqlConnection(db.ConnStr);
-            DataTable tbl = new DataTable();
-            string sqlshow = "SELECT * FROM BoligTilSalg;";
-            MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-            conn.Open();
-            tbl.Load(cmd1.ExecuteReader());
-            dataGridView1.DataSource = tbl;
-            conn.Close();
-            #endregion PassToGrid
+
+            try
+            {
+                #region PassToGrid
+                DB db = new DB();
+                MySqlConnection conn = new MySqlConnection(db.ConnStr);
+                DataTable tbl = new DataTable();
+                string sqlshow = "SELECT * FROM BoligTilSalg;";
+                MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
+                conn.Open();
+                tbl.Load(cmd1.ExecuteReader());
+                dataGridView1.DataSource = tbl;
+                conn.Close();
+                textBox1.Text = Brugernavn;
+                #endregion PassToGrid
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex}");
+            }
+
+
         }
 
 

@@ -14,6 +14,7 @@ namespace WindowsFormsApp1.Forms.Køber
     public partial class Køber_Login : Form
     {
         public static string Køber_ID_LoggedIn { get; set; }
+        public static string Køber_Brugernavn { get; set; }
         public Køber_Login()
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace WindowsFormsApp1.Forms.Køber
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string UserName = "";
             string PassWord = "";
             try
             {
@@ -49,14 +49,15 @@ namespace WindowsFormsApp1.Forms.Køber
 
                 while (rdr.Read())
                 {
-                    UserName = Convert.ToString(rdr[0]);
+                    Køber_Brugernavn = Convert.ToString(rdr[0]);
                     PassWord = Convert.ToString(rdr[1]);
                     Køber_ID_LoggedIn = Convert.ToString(rdr[2]);
+
 
                 }
                 rdr.Close();
 
-                if (textBox1.Text == UserName && textBox2.Text == PassWord)
+                if (textBox1.Text == Køber_Brugernavn && textBox2.Text == PassWord)
                 {
                     Køber_SinglePage SP = new Køber_SinglePage();
                     SP.Show();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace WindowsFormsApp1.Forms.Køber
         public Køber_SinglePage()
         {
             InitializeComponent();
+
+            textBox1.Text = Køber_Login.Køber_Brugernavn;
             panel1.Controls.Clear();
             Køber_Bolig KøbBolig = new Køber_Bolig();
             KøbBolig.TopLevel = false;
