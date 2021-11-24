@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -143,6 +144,38 @@ namespace WindowsFormsApp1.Forms.Køber
             {
                 MessageBox.Show("Boligen du forsøger at købe eksisterer ikke");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            MySqlConnection conn = new MySqlConnection(db.ConnStr);
+
+            string filePath = @"..\Txt\BoligTilSalg.txt";
+            if (!File.Exists(filePath))
+            {
+                using (File.CreateText(filePath));
+            }
+                
+
+
+            string cmd_TxtPrint = "SELECT * FROM BoligTilSalg";
+            MySqlCommand TxtPrint = new MySqlCommand(cmd_TxtPrint, conn);
+
+
+            conn.Open();
+            MySqlDataReader rdr = TxtPrint.ExecuteReader();
+
+            // Change the Encoding to what you need here (UTF8, Unicode, etc)
+            using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
+            {
+                while (rdr.Read())
+                {
+                    writer.WriteLine(rdr[0] + "\t" + rdr[1]);
+                }
+            }
+            rdr.Close();
+            conn.Close();
         }
     }
 }
