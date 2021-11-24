@@ -141,7 +141,7 @@ namespace WindowsFormsApp1.Forms.Køber
             }
             else
             {
-                MessageBox.Show("Boligen Du Forsøger At Købe Eksisterer ikke");
+                MessageBox.Show("Boligen du forsøger at købe eksisterer ikke");
             }
         }
     }

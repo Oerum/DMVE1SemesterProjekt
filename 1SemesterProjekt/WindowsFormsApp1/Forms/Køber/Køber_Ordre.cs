@@ -13,6 +13,14 @@ namespace WindowsFormsApp1.Forms.Køber
 {
     public partial class Køber_Ordre : Form
     {
+        string BoligID { get; set; }
+        string KøberID { get; set; }
+        string SælgerID { get; set; }
+        string Pris { get; set; }
+        string M2 { get; set; }
+        string PostNr { get; set; }
+        string OprettelseDato { get; set; }
+        string HandelsDato { get; set; }
         public Køber_Ordre()
         {
             InitializeComponent();
@@ -42,15 +50,6 @@ namespace WindowsFormsApp1.Forms.Køber
             DB db = new DB();
             MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
-            string BoligID = "";
-            string KøberID = "";
-            string SælgerID = "";
-            string Pris = "";
-            string M2 = "";
-            string PostNr = "";
-            string OprettelsesDato = "";
-            string HandelsDato = "";
-
             try
             {
                 string cmd_KøbtBoligLoad = "SELECT * FROM SolgteBolig Where BoligID = @BoligID AND KøberID = @KøberID";
@@ -69,7 +68,7 @@ namespace WindowsFormsApp1.Forms.Køber
                     Pris = Convert.ToString(rdr[3]);
                     M2 = Convert.ToString(rdr[4]);
                     PostNr = Convert.ToString(rdr[5]);
-                    OprettelsesDato = Convert.ToString(rdr[6]);
+                    OprettelseDato = Convert.ToString(rdr[6]);
                     HandelsDato = Convert.ToString(rdr[7]);
                 }
                 rdr.Close();
@@ -80,63 +79,71 @@ namespace WindowsFormsApp1.Forms.Køber
                 MessageBox.Show($"Error: {ex.Number} Bolig er ikke tilknyttet din konto");
             }
 
-            try
+            if (BoligID != null && KøberID != null && SælgerID != null && Pris != null && M2 != null && PostNr != null && OprettelseDato != null && HandelsDato != null)
             {
-                string cmd_Køb = "INSERT INTO BoligTilSalg (BoligID, SælgerID, Pris, M2, PostNr, OprettelsesDato) " +
-                        "VALUES(@BoligID, @SælgerID, @Pris, @M2, @PostNr, @OprettelsesDato);";
+                try
+                {
+                    string cmd_Køb = "INSERT INTO BoligTilSalg (BoligID, SælgerID, Pris, M2, PostNr, OprettelsesDato) " +
+                            "VALUES(@BoligID, @SælgerID, @Pris, @M2, @PostNr, @OprettelsesDato);";
 
 
-                MySqlCommand FjernKøb = new MySqlCommand(cmd_Køb, conn);
-                FjernKøb.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));
-                FjernKøb.Parameters.AddWithValue("@SælgerID", int.Parse(SælgerID));
-                FjernKøb.Parameters.AddWithValue("@Pris", int.Parse(Pris));
-                FjernKøb.Parameters.AddWithValue("@M2", int.Parse(M2));
-                FjernKøb.Parameters.AddWithValue("@PostNr", PostNr);
-                FjernKøb.Parameters.AddWithValue("@OprettelsesDato", Convert.ToDateTime(OprettelsesDato));
+                    MySqlCommand FjernKøb = new MySqlCommand(cmd_Køb, conn);
+                    FjernKøb.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));
+                    FjernKøb.Parameters.AddWithValue("@SælgerID", int.Parse(SælgerID));
+                    FjernKøb.Parameters.AddWithValue("@Pris", int.Parse(Pris));
+                    FjernKøb.Parameters.AddWithValue("@M2", int.Parse(M2));
+                    FjernKøb.Parameters.AddWithValue("@PostNr", PostNr);
+                    FjernKøb.Parameters.AddWithValue("@OprettelsesDato", Convert.ToDateTime(OprettelseDato));
 
 
-                conn.Open();
-                FjernKøb.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show($"{ex.Number}");
-            }
+                    conn.Open();
+                    FjernKøb.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"{ex.Number}");
+                }
 
-            try
-            {
-                string cmd_SletOrdre = "DELETE FROM SolgteBolig WHERE BoligID = @BoligID AND KøberID = @KøberID;";
-                MySqlCommand SletOrdre = new MySqlCommand(cmd_SletOrdre, conn);
-                SletOrdre.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));
-                SletOrdre.Parameters.AddWithValue("@KøberID", int.Parse(Køber_Login.Køber_ID_LoggedIn));
-                conn.Open();
-                SletOrdre.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show($"{ex}");
-            }
+                try
+                {
+                    string cmd_SletOrdre = "DELETE FROM SolgteBolig WHERE BoligID = @BoligID AND KøberID = @KøberID;";
+                    MySqlCommand SletOrdre = new MySqlCommand(cmd_SletOrdre, conn);
+                    SletOrdre.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));
+                    SletOrdre.Parameters.AddWithValue("@KøberID", int.Parse(Køber_Login.Køber_ID_LoggedIn));
+                    conn.Open();
+                    SletOrdre.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"{ex}");
+                }
 
-            try
-            {
-                MessageBox.Show("Køb fjernet succesfuldt");
-                #region PassToGrid
-                DataTable tbl = new DataTable();
-                string sqlshow = "SELECT * FROM SolgteBolig WHERE KøberID = @KøberID;";
-                MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                cmd1.Parameters.AddWithValue("@KøberID", Køber_Login.Køber_ID_LoggedIn);
-                conn.Open();
-                tbl.Load(cmd1.ExecuteReader());
-                dataGridView1.DataSource = tbl;
-                conn.Close();
-                #endregion PassToGrid
+                try
+                {
+                    MessageBox.Show("Køb fjernet succesfuldt");
+                    #region PassToGrid
+                    DataTable tbl = new DataTable();
+                    string sqlshow = "SELECT * FROM SolgteBolig WHERE KøberID = @KøberID;";
+                    MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
+                    cmd1.Parameters.AddWithValue("@KøberID", Køber_Login.Køber_ID_LoggedIn);
+                    conn.Open();
+                    tbl.Load(cmd1.ExecuteReader());
+                    dataGridView1.DataSource = tbl;
+                    conn.Close();
+                    #endregion PassToGrid
+                }
+                catch
+                {
+                    MessageBox.Show("GridView Fejl");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("GridView Fejl");
+                MessageBox.Show("Købet du Forsøger at annulere eksisterer ikke");
             }
+            
         }
     }
 }
