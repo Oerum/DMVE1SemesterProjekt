@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -144,6 +145,53 @@ namespace WindowsFormsApp1.Forms.Køber
                 MessageBox.Show("Købet du Forsøger at annulere eksisterer ikke");
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            MySqlConnection conn = new MySqlConnection(db.ConnStr);
+
+            string filePath = @"..\..\txts\KøbteBolig.txt";
+            /*
+            if (!File.Exists(filePath))
+            {
+                File.CreateText(filePath).Dispose();
+            }
+            */
+
+            string cmd_TxtPrint = "SELECT * FROM SolgteBolig Where KøberID = @KøberID";
+            MySqlCommand TxtPrint = new MySqlCommand(cmd_TxtPrint, conn);
+            TxtPrint.Parameters.AddWithValue("@KøberID", Køber_Login.Køber_ID_LoggedIn);
+
+
+            conn.Open();
+            MySqlDataReader rdr = TxtPrint.ExecuteReader();
+
+            // Change the Encoding to what you need here (UTF8, Unicode, etc)
+            using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
+            {
+                int x = 0;
+                while (rdr.Read())
+                {
+                    x++;
+                    writer.WriteLine(
+                        "{\n" +
+                        $"\tNR: {x}\n" +
+                        $"\tBoligID: {Convert.ToString(rdr[0])}\n" +
+                        $"\tKøberID: {Convert.ToString(rdr[1])}\n" +
+                        $"\tSælgerID: {Convert.ToString(rdr[2])}\n" +
+                        $"\tPris: {Convert.ToString(rdr[3])}\n" +
+                        $"\tM2: {Convert.ToString(rdr[4])}\n" +
+                        $"\tPostNr: {Convert.ToString(rdr[5])}\n" +
+                        $"\tOprettelsesDato: {Convert.ToString(rdr[6])}\n" +
+                        $"\tHandelsDato: {Convert.ToString(rdr[7])}\n" +
+                        "}\n");
+                }
+            }
+            rdr.Close();
+            conn.Close();
+            MessageBox.Show($"Fil Hentet: {filePath}");
         }
     }
 }

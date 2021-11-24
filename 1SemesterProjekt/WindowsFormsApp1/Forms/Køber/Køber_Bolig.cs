@@ -151,13 +151,13 @@ namespace WindowsFormsApp1.Forms.Køber
             DB db = new DB();
             MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
-            string filePath = @"..\Txt\BoligTilSalg.txt";
+            string filePath = @"..\..\txts\BoligTilSalg.txt";
+            /*
             if (!File.Exists(filePath))
             {
-                using (File.CreateText(filePath));
+                File.CreateText(filePath).Dispose();
             }
-                
-
+            */
 
             string cmd_TxtPrint = "SELECT * FROM BoligTilSalg";
             MySqlCommand TxtPrint = new MySqlCommand(cmd_TxtPrint, conn);
@@ -169,13 +169,25 @@ namespace WindowsFormsApp1.Forms.Køber
             // Change the Encoding to what you need here (UTF8, Unicode, etc)
             using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
             {
+                int x = 0;
                 while (rdr.Read())
                 {
-                    writer.WriteLine(rdr[0] + "\t" + rdr[1]);
+                    x++;
+                    writer.WriteLine(
+                        "{\n" +
+                        $"\tNR: {x}\n" +
+                        $"\tBoligID: {Convert.ToString(rdr[0])}\n" +
+                        $"\tSælgerID: {Convert.ToString(rdr[1])}\n" +
+                        $"\tPris: {Convert.ToString(rdr[2])}\n" +
+                        $"\tM2: {Convert.ToString(rdr[3])}\n" +
+                        $"\tPostNr: {Convert.ToString(rdr[4])}\n" +
+                        $"\tOprettelsesDato: {Convert.ToString(rdr[5])}\n" +
+                        "}\n");
                 }
             }
             rdr.Close();
             conn.Close();
+            MessageBox.Show($"Fil Hentet: {filePath}");
         }
     }
 }
