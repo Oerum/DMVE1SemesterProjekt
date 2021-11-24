@@ -12,7 +12,13 @@ using System.Windows.Forms;
 namespace WindowsFormsApp1.Forms.Køber
 {
     public partial class Køber_Bolig : Form
-    {  
+    {
+        string BoligID { get; set; }
+        string SælgerID { get; set; }
+        string Pris { get; set; }
+        string M2 { get; set; }
+        string PostNr { get; set; }
+        string Dato { get; set; }
         public Køber_Bolig()
         {
             InitializeComponent();
@@ -43,49 +49,43 @@ namespace WindowsFormsApp1.Forms.Køber
             DB db = new DB();
             MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
-            string BoligID = "";
-            string SælgerID = "";
-            string Pris = "";
-            string M2 = "";
-            string PostNr = "";
-            string Dato = "";
-
             try
             {
+                string cmd_BoligValg = "SELECT * FROM BoligTilSalg Where BoligID = @BoligID";
+
+                MySqlCommand BoligValg = new MySqlCommand(cmd_BoligValg, conn);
+                BoligValg.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
+
+                conn.Open();
+                MySqlDataReader rdr = BoligValg.ExecuteReader();
+                while (rdr.Read())
+                {
+                    BoligID = Convert.ToString(rdr[0]);
+                    SælgerID = Convert.ToString(rdr[1]);
+                    Pris = Convert.ToString(rdr[2]);
+                    M2 = Convert.ToString(rdr[3]);
+                    PostNr = Convert.ToString(rdr[4]);
+                    Dato = Convert.ToString(rdr[5]);
+                }
+                rdr.Close();
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"{ex.Number}");
+            }
+
+            if (BoligID != null && Køber_Login.Køber_ID_LoggedIn != null && Pris != null && M2 != null && PostNr != null && PostNr != null && Dato != null)
+            { 
                 try
                 {
-                    string cmd_BoligValg = "SELECT * FROM BoligTilSalg Where BoligID = @BoligID";
 
-                    MySqlCommand BoligValg = new MySqlCommand(cmd_BoligValg, conn);
-                    BoligValg.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
-
-                    conn.Open();
-                    MySqlDataReader rdr = BoligValg.ExecuteReader();
-                    while (rdr.Read())
-                    {
-                        BoligID = Convert.ToString(rdr[0]);
-                        SælgerID = Convert.ToString(rdr[1]);
-                        Pris = Convert.ToString(rdr[2]);
-                        M2 = Convert.ToString(rdr[3]);
-                        PostNr = Convert.ToString(rdr[4]);
-                        Dato = Convert.ToString(rdr[5]);
-                    }
-                    rdr.Close();
-                    conn.Close();
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show($"{ex.Number}");
-                }
-
-                try
-                {
                     string cmd_Køb = "INSERT INTO SolgteBolig (BoligID, KøberID, SælgerID, Pris, M2, PostNr, OprettelsesDato, HandelsDato) " +
-                           "VALUES(@BoligID, @KøberID, @SælgerID, @Pris, @M2, @PostNr, @OprettelsesDato, CURRENT_TIMESTAMP);";
+                        "VALUES(@BoligID, @KøberID, @SælgerID, @Pris, @M2, @PostNr, @OprettelsesDato, CURRENT_TIMESTAMP);";
 
 
                     MySqlCommand Køb = new MySqlCommand(cmd_Køb, conn);
-                    Køb.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
+                    Køb.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));
                     Køb.Parameters.AddWithValue("@KøberID", int.Parse(Køber_Login.Køber_ID_LoggedIn));
                     Køb.Parameters.AddWithValue("@SælgerID", int.Parse(SælgerID));
                     Køb.Parameters.AddWithValue("@Pris", int.Parse(Pris));
@@ -97,6 +97,7 @@ namespace WindowsFormsApp1.Forms.Køber
                     conn.Open();
                     Køb.ExecuteNonQuery();
                     conn.Close();
+                
                 }
                 catch (MySqlException ex)
                 {
@@ -105,38 +106,43 @@ namespace WindowsFormsApp1.Forms.Køber
 
                 try
                 {
+                
+    
                     string cmd_Slet = "DELETE FROM BoligTilSalg WHERE BoligID = @BoligID;";
                     MySqlCommand Slet = new MySqlCommand(cmd_Slet, conn);
                     Slet.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));
                     conn.Open();
                     Slet.ExecuteNonQuery();
-                    conn.Close();
+                    conn.Close(); 
+                    
                 }
                 catch (MySqlException ex)
                 {
                     MessageBox.Show($"{ex.Number}");
                 }
+
+                try
+                {
+                    MessageBox.Show("Køb succesfuld");
+                    #region PassToGrid
+                    DataTable tbl = new DataTable();
+                    string sqlshow = "SELECT * FROM BoligTilSalg;";
+                    MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
+                    conn.Open();
+                    tbl.Load(cmd1.ExecuteReader());
+                    dataGridView1.DataSource = tbl;
+                    conn.Close();
+                    #endregion PassToGrid
+                }
+                catch
+                {
+                    MessageBox.Show("GridView Fejl");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"{ex}");
+                MessageBox.Show("Boligen Du Forsøger At Købe Eksisterer ikke");
             }
-            finally
-            {
-                MessageBox.Show("Køb succesfuld");
-                #region PassToGrid
-                DataTable tbl = new DataTable();
-                string sqlshow = "SELECT * FROM BoligTilSalg;";
-                MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                conn.Open();
-                tbl.Load(cmd1.ExecuteReader());
-                dataGridView1.DataSource = tbl;
-                conn.Close();
-                #endregion PassToGrid
-            }
-
-
-
         }
     }
 }
