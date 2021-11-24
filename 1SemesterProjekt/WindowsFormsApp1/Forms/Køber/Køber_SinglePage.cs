@@ -7,17 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Forms.Køber
 {
-    public partial class Kunder : Form
+    public partial class Køber_SinglePage : Form
     {
-        public static Kunder instance;
-        public Kunder()
+        public Køber_SinglePage()
         {
             InitializeComponent();
-            instance = this;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -26,11 +23,5 @@ namespace WindowsFormsApp1
             obj.Show();
             this.Hide();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
     }
 }

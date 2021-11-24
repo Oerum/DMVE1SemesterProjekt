@@ -307,6 +307,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ejendomsmægler_OpdaterSælger";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejendomsmægler_OpdaterSælger";
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).EndInit();

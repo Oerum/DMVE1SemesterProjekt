@@ -120,6 +120,7 @@ namespace WindowsFormsApp1.Forms.Sælger
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Sælger_SingePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sælger_Singepage";
             this.ResumeLayout(false);
 

@@ -112,7 +112,7 @@ namespace WindowsFormsApp1.Forms
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // Ejendomsmægler_SinglePage
+            // Ejendomsmælger_SinglePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,7 +126,8 @@ namespace WindowsFormsApp1.Forms
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Ejendomsmægler_SinglePage";
+            this.Name = "Ejendomsmælger_SinglePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejendomsmægler_SinglePage";
             this.ResumeLayout(false);
 

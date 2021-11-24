@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Forms.Køber;
 using WindowsFormsApp1.Forms.Sælger;
 
 namespace WindowsFormsApp1.Forms
@@ -38,6 +39,13 @@ namespace WindowsFormsApp1.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             Sælger_Login login = new Sælger_Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Køber_Login login = new Køber_Login();
             login.Show();
             this.Hide();
         }

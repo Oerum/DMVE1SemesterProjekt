@@ -39,14 +39,14 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.label1 = new System.Windows.Forms.Label();
             this.boligTilSalgTableAdapter = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.BoligTilSalgTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sælgerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sælgerTableAdapter = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.SælgerTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlfDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fornavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.efternavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brugernavnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kodeordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sælgerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sælgerTableAdapter = new WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters.SælgerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).BeginInit();
@@ -127,15 +127,6 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.dataGridView1.Size = new System.Drawing.Size(652, 391);
             this.dataGridView1.TabIndex = 42;
             // 
-            // sælgerBindingSource
-            // 
-            this.sælgerBindingSource.DataMember = "Sælger";
-            this.sælgerBindingSource.DataSource = this.ejendomsmæglerDataSetBindingSource;
-            // 
-            // sælgerTableAdapter
-            // 
-            this.sælgerTableAdapter.ClearBeforeFill = true;
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -178,6 +169,15 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.kodeordDataGridViewTextBoxColumn.HeaderText = "Kodeord";
             this.kodeordDataGridViewTextBoxColumn.Name = "kodeordDataGridViewTextBoxColumn";
             // 
+            // sælgerBindingSource
+            // 
+            this.sælgerBindingSource.DataMember = "Sælger";
+            this.sælgerBindingSource.DataSource = this.ejendomsmæglerDataSetBindingSource;
+            // 
+            // sælgerTableAdapter
+            // 
+            this.sælgerTableAdapter.ClearBeforeFill = true;
+            // 
             // Ejendomsmægler_SletSælger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +190,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ejendomsmægler_SletSælger";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejendomsmægler_SletSælger";
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).EndInit();

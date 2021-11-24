@@ -93,6 +93,7 @@ namespace WindowsFormsApp1.Forms
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Ejendomsmægler_Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejendomsmægler Login";
             this.ResumeLayout(false);
             this.PerformLayout();

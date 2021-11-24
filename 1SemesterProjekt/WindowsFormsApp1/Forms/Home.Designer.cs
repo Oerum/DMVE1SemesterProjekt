@@ -61,8 +61,9 @@ namespace WindowsFormsApp1.Forms
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 49);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Kunder";
+            this.button2.Text = "Køber";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -85,6 +86,7 @@ namespace WindowsFormsApp1.Forms
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
             this.ResumeLayout(false);
             this.PerformLayout();

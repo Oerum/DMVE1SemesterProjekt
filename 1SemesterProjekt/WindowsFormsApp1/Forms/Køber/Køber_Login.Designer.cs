@@ -1,7 +1,7 @@
 ﻿
-namespace WindowsFormsApp1.Forms.Sælger
+namespace WindowsFormsApp1.Forms.Køber
 {
-    partial class Sælger_Login
+    partial class Køber_Login
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,7 @@ namespace WindowsFormsApp1.Forms.Sælger
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -81,20 +82,31 @@ namespace WindowsFormsApp1.Forms.Sælger
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 5;
             // 
-            // Sælger_Login
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(18, 230);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(158, 25);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Opret Bruger";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Køber_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(204, 214);
+            this.ClientSize = new System.Drawing.Size(196, 267);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Sælger_Login";
+            this.Name = "Køber_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sælger Login";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +119,6 @@ namespace WindowsFormsApp1.Forms.Sælger
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
     }
 }

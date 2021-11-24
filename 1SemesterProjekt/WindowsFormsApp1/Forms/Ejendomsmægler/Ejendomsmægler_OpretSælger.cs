@@ -63,9 +63,14 @@ namespace WindowsFormsApp1.Forms
                 conn.Close();
                 #endregion PassToGrid
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show($"{ex}");
+                if (ex.Number == 1062)
+                {
+                    MessageBox.Show("Brugernavn findes allerede");
+                }
+                else
+                    MessageBox.Show($"{ex.Number}");
             }
         }
     }

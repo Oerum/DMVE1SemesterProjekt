@@ -228,6 +228,7 @@ namespace WindowsFormsApp1.Forms.Sælger
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sælger_OpdaterBolig";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sælger_OpdaterBolig";
             ((System.ComponentModel.ISupportInitialize)(this.boligTilSalgBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSetBindingSource)).EndInit();

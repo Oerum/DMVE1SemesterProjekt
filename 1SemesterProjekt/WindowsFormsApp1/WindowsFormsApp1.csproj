@@ -143,17 +143,29 @@
     <Compile Include="Forms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Kunder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Kunder.Designer.cs">
-      <DependentUpon>Kunder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.Designer.cs">
       <DependentUpon>Ejendomsmægler_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_Login.Designer.cs">
+      <DependentUpon>Køber_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_Register.Designer.cs">
+      <DependentUpon>Køber_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_SinglePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_SinglePage.Designer.cs">
+      <DependentUpon>Køber_SinglePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Sælger\Sælger_Login.cs">
       <SubType>Form</SubType>
@@ -199,11 +211,17 @@
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Kunder.resx">
-      <DependentUpon>Kunder.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.resx">
       <DependentUpon>Ejendomsmægler_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Køber\Køber_Login.resx">
+      <DependentUpon>Køber_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Køber\Køber_Register.resx">
+      <DependentUpon>Køber_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Køber\Køber_SinglePage.resx">
+      <DependentUpon>Køber_SinglePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Sælger\Sælger_Login.resx">
       <DependentUpon>Sælger_Login.cs</DependentUpon>

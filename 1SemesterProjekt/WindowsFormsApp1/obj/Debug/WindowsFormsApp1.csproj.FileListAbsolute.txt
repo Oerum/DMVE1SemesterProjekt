@@ -30,7 +30,6 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\Windo
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Home.resources
-C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Kunder.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_OpretBolig.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_Login.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler_OpdaterBolig.resources
@@ -42,3 +41,6 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\Windo
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger_OpdaterBolig.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger_SingePage.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmælger_SinglePage.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_Login.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_Register.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_SinglePage.resources
