@@ -122,8 +122,6 @@ namespace WindowsFormsApp1.Forms.Køber
             {
                 MessageBox.Show("Køb succesfuld");
                 #region PassToGrid
-                DB db = new DB();
-                MySqlConnection conn = new MySqlConnection(db.ConnStr);
                 DataTable tbl = new DataTable();
                 string sqlshow = "SELECT * FROM BoligTilSalg;";
                 MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
