@@ -13,10 +13,11 @@ namespace WindowsFormsApp1.Forms.Køber
 {
     public partial class Køber_SinglePage : Form
     {
+        public static Køber_SinglePage KSP;
         public Køber_SinglePage()
         {
+            KSP = this;
             InitializeComponent();
-
             textBox1.Text = Køber_Login.Køber_Brugernavn;
             panel1.Controls.Clear();
             Køber_Bolig KøbBolig = new Køber_Bolig();

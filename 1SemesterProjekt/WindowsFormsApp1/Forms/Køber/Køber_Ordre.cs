@@ -79,7 +79,7 @@ namespace WindowsFormsApp1.Forms.Køber
                 MessageBox.Show($"Error: {ex.Number} Bolig er ikke tilknyttet din konto");
             }
 
-            if (BoligID != null && KøberID != null && SælgerID != null && Pris != null && M2 != null && PostNr != null && OprettelseDato != null && HandelsDato != null)
+            if (BoligID != null && KøberID == Køber_Login.Køber_ID_LoggedIn && SælgerID != null && Pris != null && M2 != null && PostNr != null && OprettelseDato != null && HandelsDato != null)
             {
                 try
                 {
