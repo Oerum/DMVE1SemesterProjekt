@@ -90,6 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
+    <Compile Include="EjendomsmæglerDataSet.cs">
+      <DependentUpon>EjendomsmæglerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EjendomsmæglerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

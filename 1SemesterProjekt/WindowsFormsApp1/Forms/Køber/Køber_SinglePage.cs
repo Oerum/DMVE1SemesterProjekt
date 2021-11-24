@@ -52,5 +52,15 @@ namespace WindowsFormsApp1.Forms.Køber
             panel1.Controls.Add(KøberOrdre);
             KøberOrdre.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Køber_Konto Køber_konto = new Køber_Konto();
+            Køber_konto.TopLevel = false;
+            Køber_konto.AutoScroll = true;
+            panel1.Controls.Add(Køber_konto);
+            Køber_konto.Show();
+        }
     }
 }

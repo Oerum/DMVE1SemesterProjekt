@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:BoligTilSalg" ZOrder="8" X="324" Y="70" Height="191" Width="213" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:Ejendomsmaegler" ZOrder="7" X="855" Y="70" Height="191" Width="248" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:Køber" ZOrder="6" X="606" Y="331" Height="191" Width="179" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:SolgteBolig" ZOrder="5" X="324" Y="331" Height="210" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:SolgteBolig" ZOrder="5" X="324" Y="331" Height="229" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
     <Shape ID="DesignTable:Sælger" ZOrder="4" X="70" Y="70" Height="191" Width="184" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="140" />
   </Shapes>
   <Connectors>

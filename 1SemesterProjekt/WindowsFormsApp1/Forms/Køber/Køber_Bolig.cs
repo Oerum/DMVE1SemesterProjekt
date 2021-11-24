@@ -15,9 +15,7 @@ namespace WindowsFormsApp1.Forms.Køber
     {  
         public Køber_Bolig()
         {
-            string Brugernavn = "";
             InitializeComponent();
-
             try
             {
                 #region PassToGrid
@@ -30,15 +28,12 @@ namespace WindowsFormsApp1.Forms.Køber
                 tbl.Load(cmd1.ExecuteReader());
                 dataGridView1.DataSource = tbl;
                 conn.Close();
-                textBox1.Text = Brugernavn;
                 #endregion PassToGrid
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex}");
             }
-
-
         }
 
 
@@ -63,11 +58,6 @@ namespace WindowsFormsApp1.Forms.Køber
 
                     MySqlCommand BoligValg = new MySqlCommand(cmd_BoligValg, conn);
                     BoligValg.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
-                    BoligValg.Parameters.AddWithValue("@SælgerID", int.Parse(textBox1.Text));
-                    BoligValg.Parameters.AddWithValue("@Pris", int.Parse(textBox1.Text));
-                    BoligValg.Parameters.AddWithValue("@M2", int.Parse(textBox1.Text));
-                    BoligValg.Parameters.AddWithValue("@PostNr", textBox1.Text);
-                    BoligValg.Parameters.AddWithValue("@KøberID", Køber_Login.Køber_ID_LoggedIn);
 
                     conn.Open();
                     MySqlDataReader rdr = BoligValg.ExecuteReader();
@@ -90,8 +80,8 @@ namespace WindowsFormsApp1.Forms.Køber
 
                 try
                 {
-                    string cmd_Køb = "INSERT INTO SolgteBolig (BoligID, KøberID, SælgerID, Pris, M2, PostNr, HandelsDato) " +
-                           "VALUES(@BoligID, @KøberID, @SælgerID, @Pris, @M2, @PostNr, CURRENT_TIMESTAMP);";
+                    string cmd_Køb = "INSERT INTO SolgteBolig (BoligID, KøberID, SælgerID, Pris, M2, PostNr, OprettelsesDato, HandelsDato) " +
+                           "VALUES(@BoligID, @KøberID, @SælgerID, @Pris, @M2, @PostNr, @OprettelsesDato, CURRENT_TIMESTAMP);";
 
 
                     MySqlCommand Køb = new MySqlCommand(cmd_Køb, conn);
@@ -101,6 +91,7 @@ namespace WindowsFormsApp1.Forms.Køber
                     Køb.Parameters.AddWithValue("@Pris", int.Parse(Pris));
                     Køb.Parameters.AddWithValue("@M2", int.Parse(M2));
                     Køb.Parameters.AddWithValue("@PostNr", PostNr);
+                    Køb.Parameters.AddWithValue("@OprettelsesDato", Convert.ToDateTime(Dato));
 
 
                     conn.Open();

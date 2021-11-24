@@ -1455,6 +1455,8 @@ namespace WindowsFormsApp1 {
             
             private global::System.Data.DataColumn columnPostNr;
             
+            private global::System.Data.DataColumn columnOprettelsesDato;
+            
             private global::System.Data.DataColumn columnHandelsDato;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1540,6 +1542,14 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OprettelsesDatoColumn {
+                get {
+                    return this.columnOprettelsesDato;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn HandelsDatoColumn {
                 get {
                     return this.columnHandelsDato;
@@ -1583,7 +1593,7 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SolgteBoligRow AddSolgteBoligRow(int BoligID, KøberRow parentKøberRowByFK_SolgtKøber, SælgerRow parentSælgerRowByFK_SolgtSælger, int Pris, int M2, string PostNr, System.DateTime HandelsDato) {
+            public SolgteBoligRow AddSolgteBoligRow(int BoligID, KøberRow parentKøberRowByFK_SolgtKøber, SælgerRow parentSælgerRowByFK_SolgtSælger, int Pris, int M2, string PostNr, System.DateTime OprettelsesDato, string HandelsDato) {
                 SolgteBoligRow rowSolgteBoligRow = ((SolgteBoligRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         BoligID,
@@ -1592,6 +1602,7 @@ namespace WindowsFormsApp1 {
                         Pris,
                         M2,
                         PostNr,
+                        OprettelsesDato,
                         HandelsDato};
                 if ((parentKøberRowByFK_SolgtKøber != null)) {
                     columnValuesArray[1] = parentKøberRowByFK_SolgtKøber[0];
@@ -1634,6 +1645,7 @@ namespace WindowsFormsApp1 {
                 this.columnPris = base.Columns["Pris"];
                 this.columnM2 = base.Columns["M2"];
                 this.columnPostNr = base.Columns["PostNr"];
+                this.columnOprettelsesDato = base.Columns["OprettelsesDato"];
                 this.columnHandelsDato = base.Columns["HandelsDato"];
             }
             
@@ -1652,7 +1664,9 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnM2);
                 this.columnPostNr = new global::System.Data.DataColumn("PostNr", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPostNr);
-                this.columnHandelsDato = new global::System.Data.DataColumn("HandelsDato", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnOprettelsesDato = new global::System.Data.DataColumn("OprettelsesDato", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOprettelsesDato);
+                this.columnHandelsDato = new global::System.Data.DataColumn("HandelsDato", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHandelsDato);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnBoligID}, true));
@@ -2748,10 +2762,26 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime HandelsDato {
+            public System.DateTime OprettelsesDato {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableSolgteBolig.HandelsDatoColumn]));
+                        return ((global::System.DateTime)(this[this.tableSolgteBolig.OprettelsesDatoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OprettelsesDato\' in table \'SolgteBolig\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSolgteBolig.OprettelsesDatoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string HandelsDato {
+                get {
+                    try {
+                        return ((string)(this[this.tableSolgteBolig.HandelsDatoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'HandelsDato\' in table \'SolgteBolig\' is DBNull.", e);
@@ -2842,6 +2872,18 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPostNrNull() {
                 this[this.tableSolgteBolig.PostNrColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOprettelsesDatoNull() {
+                return this.IsNull(this.tableSolgteBolig.OprettelsesDatoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOprettelsesDatoNull() {
+                this[this.tableSolgteBolig.OprettelsesDatoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5380,7 +5422,7 @@ namespace WindowsFormsApp1.EjendomsmæglerDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Pris", "Pris");
             tableMapping.ColumnMappings.Add("M2", "M2");
             tableMapping.ColumnMappings.Add("PostNr", "PostNr");
-            tableMapping.ColumnMappings.Add("HandelsDato", "HandelsDato");
+            tableMapping.ColumnMappings.Add("HandelsDato", "OprettelsesDato");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;

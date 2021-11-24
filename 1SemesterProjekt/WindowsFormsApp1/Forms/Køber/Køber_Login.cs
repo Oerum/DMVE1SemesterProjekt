@@ -54,6 +54,7 @@ namespace WindowsFormsApp1.Forms.Køber
                     Køber_ID_LoggedIn = Convert.ToString(rdr[2]);
 
 
+
                 }
                 rdr.Close();
 
