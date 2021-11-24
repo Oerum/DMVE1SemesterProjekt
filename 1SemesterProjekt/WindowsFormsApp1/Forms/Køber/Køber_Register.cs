@@ -41,10 +41,10 @@ namespace WindowsFormsApp1.Forms.Køber
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@Tlf", textBox1.Text);
-                cmd.Parameters.AddWithValue("@Fornavn", textBox2.Text);
-                cmd.Parameters.AddWithValue("@Efternavn", textBox3.Text);
-                cmd.Parameters.AddWithValue("@Brugernavn", textBox4.Text);
-                cmd.Parameters.AddWithValue("@Kodeord", textBox5.Text);
+                cmd.Parameters.AddWithValue("@Fornavn", textBox3.Text);
+                cmd.Parameters.AddWithValue("@Efternavn", textBox4.Text);
+                cmd.Parameters.AddWithValue("@Brugernavn", textBox5.Text);
+                cmd.Parameters.AddWithValue("@Kodeord", textBox6.Text);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();

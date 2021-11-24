@@ -149,11 +149,23 @@
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.Designer.cs">
       <DependentUpon>Ejendomsmægler_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Køber\Køber_Bolig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_Bolig.Designer.cs">
+      <DependentUpon>Køber_Bolig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Køber\Køber_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Køber\Køber_Login.Designer.cs">
       <DependentUpon>Køber_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_Ordre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Køber\Køber_Ordre.Designer.cs">
+      <DependentUpon>Køber_Ordre.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Køber\Køber_Register.cs">
       <SubType>Form</SubType>
@@ -214,8 +226,14 @@
     <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_Login.resx">
       <DependentUpon>Ejendomsmægler_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Køber\Køber_Bolig.resx">
+      <DependentUpon>Køber_Bolig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Køber\Køber_Login.resx">
       <DependentUpon>Køber_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Køber\Køber_Ordre.resx">
+      <DependentUpon>Køber_Ordre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Køber\Køber_Register.resx">
       <DependentUpon>Køber_Register.cs</DependentUpon>

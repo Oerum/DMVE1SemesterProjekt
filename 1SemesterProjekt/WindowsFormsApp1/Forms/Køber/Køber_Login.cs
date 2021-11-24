@@ -13,6 +13,7 @@ namespace WindowsFormsApp1.Forms.Køber
 {
     public partial class Køber_Login : Form
     {
+        public static string Køber_ID_LoggedIn { get; set; }
         public Køber_Login()
         {
             InitializeComponent();
@@ -50,6 +51,7 @@ namespace WindowsFormsApp1.Forms.Køber
                 {
                     UserName = Convert.ToString(rdr[0]);
                     PassWord = Convert.ToString(rdr[1]);
+                    Køber_ID_LoggedIn = Convert.ToString(rdr[2]);
 
                 }
                 rdr.Close();

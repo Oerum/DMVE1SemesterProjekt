@@ -44,3 +44,5 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\Windo
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_Login.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_Register.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_SinglePage.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_Bolig.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE-1.SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_Ordre.resources
