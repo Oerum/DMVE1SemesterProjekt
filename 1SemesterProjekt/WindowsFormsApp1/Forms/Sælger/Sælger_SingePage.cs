@@ -30,9 +30,6 @@ namespace WindowsFormsApp1.Forms.Sælger
             this.Hide();
         }
 
-        
-
-        
 
     }
 }
