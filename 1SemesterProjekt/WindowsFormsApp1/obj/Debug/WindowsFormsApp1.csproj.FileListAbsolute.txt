@@ -96,3 +96,5 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\Windows
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_InputPostNr.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_SolgteBolig.resources

@@ -98,6 +98,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EjendomsmæglerDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_InputPostNr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_InputPostNr.Designer.cs">
+      <DependentUpon>Ejendomsmægler_InputPostNr.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterBolig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,12 @@
     </Compile>
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SletSælger.Designer.cs">
       <DependentUpon>Ejendomsmægler_SletSælger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SolgteBolig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_SolgteBolig.Designer.cs">
+      <DependentUpon>Ejendomsmægler_SolgteBolig.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
@@ -208,6 +220,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_InputPostNr.resx">
+      <DependentUpon>Ejendomsmægler_InputPostNr.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_OpdaterBolig.resx">
       <DependentUpon>Ejendomsmægler_OpdaterBolig.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_SletSælger.resx">
       <DependentUpon>Ejendomsmægler_SletSælger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_SolgteBolig.resx">
+      <DependentUpon>Ejendomsmægler_SolgteBolig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -296,9 +314,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="txts\test2.txt" />
+    <Folder Include="txts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

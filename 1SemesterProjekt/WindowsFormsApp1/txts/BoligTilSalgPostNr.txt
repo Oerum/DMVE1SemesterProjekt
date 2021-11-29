@@ -1,0 +1,11 @@
+﻿{
+	PostNr: 7100
+	BoligID: 4
+	KøberID: 8
+	SælgerID: 1
+	Pris: 456132
+	M2: 212
+	OprettelsesDato: 24-11-2021 21:09:39
+	HandelsDato: 24-11-2021 21:53:48
+}
+

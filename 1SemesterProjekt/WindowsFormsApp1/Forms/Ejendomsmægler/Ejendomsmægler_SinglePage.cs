@@ -90,5 +90,15 @@ namespace WindowsFormsApp1.Forms
             panel1.Controls.Add(OpdaterSælger);
             OpdaterSælger.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            Ejendomsmægler_SolgteBolig SolgteBolig = new Ejendomsmægler_SolgteBolig();
+            SolgteBolig.TopLevel = false;
+            SolgteBolig.AutoScroll = true;
+            panel1.Controls.Add(SolgteBolig);
+            SolgteBolig.Show();
+        }
     }
 }
