@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.Forms.Køber
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
 
-                string sql = "SELECT ID, Tlf, Fornavn, Efternavn, Brugernavn, CAST(AES_DECRYPT(UNHEX(Kodeord), 'somethingfunnyhere') as varchar(100)) FROM Køber WHERE Brugernavn = Brugernavn;";
+                string sql = "SELECT ID, Tlf, Fornavn, Efternavn, Brugernavn, CAST(AES_DECRYPT(UNHEX(Kodeord), 'somethingfunnyhere') as varchar(100)) FROM Køber WHERE Brugernavn = @Brugernavn;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 

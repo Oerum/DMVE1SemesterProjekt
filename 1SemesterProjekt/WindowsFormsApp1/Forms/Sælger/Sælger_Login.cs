@@ -37,7 +37,7 @@ namespace WindowsFormsApp1.Forms.Sælger
                 MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
 
-                string sql = "SELECT Brugernavn, CAST(AES_DECRYPT(UNHEX(Kodeord), 'somethingfunnyhere') as varchar(100)) as 'Kodeord', ID FROM Sælger WHERE Brugernavn = Brugernavn;";
+                string sql = "SELECT ID, Brugernavn, CAST(AES_DECRYPT(UNHEX(Kodeord), 'somethingfunnyhere') as varchar(100)) FROM Sælger WHERE Brugernavn = @Brugernavn;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -49,10 +49,9 @@ namespace WindowsFormsApp1.Forms.Sælger
 
                 while (rdr.Read())
                 {
-                    UserName = Convert.ToString(rdr[0]);
-                    PassWord = Convert.ToString(rdr[1]);
-                    Sælger_ID_LoggedIn = Convert.ToString(rdr[2]);
-
+                    Sælger_ID_LoggedIn = Convert.ToString(rdr[0]);
+                    UserName = Convert.ToString(rdr[1]);
+                    PassWord = Convert.ToString(rdr[2]);
                 }
                 rdr.Close();
 

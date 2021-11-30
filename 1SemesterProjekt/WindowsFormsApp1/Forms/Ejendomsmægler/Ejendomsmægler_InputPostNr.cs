@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                         File.CreateText(filePath).Dispose();
                     }
                     */
-                    string cmd_TxtPrint = "SELECT * FROM SolgteBolig WHERE PostNR = @PostNr";
+                    string cmd_TxtPrint = "SELECT * FROM SolgteBolig WHERE PostNr = @PostNr";
                     MySqlCommand TxtPrint = new MySqlCommand(cmd_TxtPrint, conn);
                     TxtPrint.Parameters.AddWithValue("@PostNr", InputPostNr);
 
@@ -51,10 +51,12 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                     // Change the Encoding to what you need here (UTF8, Unicode, etc)
                     using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
                     {
-                        int x = 0;
                         while (rdr.Read())
                         {
+                            int Sum = 0;
+                            Sum += Convert.ToInt32(rdr[3]);
                             writer.WriteLine(
+
                                 "{\n" +
                                 $"\tPostNr: {Convert.ToString(rdr[5])}\n" +
                                 $"\tBoligID: {Convert.ToString(rdr[0])}\n" +
@@ -64,11 +66,13 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                                 $"\tM2: {Convert.ToString(rdr[4])}\n" +
                                 $"\tOprettelsesDato: {Convert.ToString(rdr[6])}\n" +
                                 $"\tHandelsDato: {Convert.ToString(rdr[7])}\n" +
-                                "}\n");
+                                "}\n" +
+                                "\n");
                         }
                     }
                     rdr.Close();
                     conn.Close();
+
                     MessageBox.Show($"Fil Hentet: {filePath}");
                 }
                 this.Hide();

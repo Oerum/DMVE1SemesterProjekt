@@ -9,3 +9,16 @@
 	HandelsDato: 24-11-2021 21:53:48
 }
 
+
+{
+	PostNr: 7100
+	BoligID: 9
+	KøberID: 11
+	SælgerID: 1
+	Pris: 500000
+	M2: 286
+	OprettelsesDato: 29-11-2021 15:26:43
+	HandelsDato: 29-11-2021 15:30:41
+}
+
+
