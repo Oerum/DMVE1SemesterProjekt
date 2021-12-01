@@ -15,12 +15,19 @@ namespace WindowsFormsApp1.Forms.Køber
     public partial class Køber_Ordre : Form
     {
         string BoligID { get; set; }
-        string KøberID { get; set; }
         string SælgerID { get; set; }
+        string KøberID { get; set; }
         string Pris { get; set; }
         string M2 { get; set; }
+        string By { get; set; }
         string PostNr { get; set; }
-        string OprettelseDato { get; set; }
+        string Adresse { get; set; }
+        string Etager { get; set; }
+        string Byggeår { get; set; }
+        string Boligtype { get; set; }
+        string Værelser { get; set; }
+        string Energimærke { get; set; }
+        string Oprettelsesdato { get; set; }
         string HandelsDato { get; set; }
         public Køber_Ordre()
         {
@@ -68,9 +75,16 @@ namespace WindowsFormsApp1.Forms.Køber
                     SælgerID = Convert.ToString(rdr[2]);
                     Pris = Convert.ToString(rdr[3]);
                     M2 = Convert.ToString(rdr[4]);
-                    PostNr = Convert.ToString(rdr[5]);
-                    OprettelseDato = Convert.ToString(rdr[6]);
-                    HandelsDato = Convert.ToString(rdr[7]);
+                    By = Convert.ToString(rdr[5]);
+                    PostNr = Convert.ToString(rdr[6]);
+                    Adresse = Convert.ToString(rdr[7]);
+                    Etager = Convert.ToString(rdr[8]);
+                    Byggeår = Convert.ToString(rdr[9]);
+                    Boligtype = Convert.ToString(rdr[10]);
+                    Værelser = Convert.ToString(rdr[11]);
+                    Energimærke = Convert.ToString(rdr[12]);
+                    Oprettelsesdato = Convert.ToString(rdr[13]);
+                    HandelsDato = Convert.ToString(rdr[14]);
                 }
                 rdr.Close();
                 conn.Close();
@@ -80,21 +94,29 @@ namespace WindowsFormsApp1.Forms.Køber
                 MessageBox.Show($"Error: {ex.Number} Bolig er ikke tilknyttet din konto");
             }
 
-            if (BoligID != null && KøberID == Køber_Login.Køber_ID_LoggedIn && SælgerID != null && Pris != null && M2 != null && PostNr != null && OprettelseDato != null && HandelsDato != null)
+            if (BoligID != null && KøberID == Køber_Login.Køber_ID_LoggedIn && SælgerID != null && Pris != null && M2 != null && By != null && PostNr != null && Adresse != null && Etager != null && Byggeår != null && Boligtype != null && Værelser != null && Energimærke != null && Oprettelsesdato != null && HandelsDato != null)
             {
                 try
                 {
-                    string cmd_Køb = "INSERT INTO BoligTilSalg (BoligID, SælgerID, Pris, M2, PostNr, OprettelsesDato) " +
-                            "VALUES(@BoligID, @SælgerID, @Pris, @M2, @PostNr, @OprettelsesDato);";
+                    string cmd_Køb = "INSERT INTO BoligTilSalg(BoligID, SælgerID, Pris, M2, `By`, PostNr, Adresse, Etager, Byggeår, Boligtype, Værelser, Energimærke, OprettelsesDato) " +
+                                 "VALUES(@BoligID, @SælgerID, @Pris, @M2, @By, @PostNr, @Adresse, @Etager, @Byggeår, @Boligtype, @Værelser, @Energimærke, @OprettelsesDato);";
 
 
                     MySqlCommand FjernKøb = new MySqlCommand(cmd_Køb, conn);
-                    FjernKøb.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));
-                    FjernKøb.Parameters.AddWithValue("@SælgerID", int.Parse(SælgerID));
-                    FjernKøb.Parameters.AddWithValue("@Pris", int.Parse(Pris));
-                    FjernKøb.Parameters.AddWithValue("@M2", int.Parse(M2));
+                    FjernKøb.Parameters.AddWithValue("@BoligID", Convert.ToInt32(BoligID));
+                    FjernKøb.Parameters.AddWithValue("@KøberID", Convert.ToInt32(KøberID));
+                    FjernKøb.Parameters.AddWithValue("@SælgerID", Convert.ToInt32(SælgerID));
+                    FjernKøb.Parameters.AddWithValue("@Pris", Convert.ToInt32(Pris));
+                    FjernKøb.Parameters.AddWithValue("@M2", Convert.ToInt32(M2));
+                    FjernKøb.Parameters.AddWithValue("@By", By);
                     FjernKøb.Parameters.AddWithValue("@PostNr", PostNr);
-                    FjernKøb.Parameters.AddWithValue("@OprettelsesDato", Convert.ToDateTime(OprettelseDato));
+                    FjernKøb.Parameters.AddWithValue("@Adresse", Adresse);
+                    FjernKøb.Parameters.AddWithValue("@Etager", Etager);
+                    FjernKøb.Parameters.AddWithValue("@Byggeår", Byggeår);
+                    FjernKøb.Parameters.AddWithValue("@Boligtype", Boligtype);
+                    FjernKøb.Parameters.AddWithValue("@Værelser", Værelser);
+                    FjernKøb.Parameters.AddWithValue("@Energimærke", Energimærke);
+                    FjernKøb.Parameters.AddWithValue("@OprettelsesDato", Convert.ToDateTime(Oprettelsesdato));
 
 
                     conn.Open();
@@ -183,10 +205,17 @@ namespace WindowsFormsApp1.Forms.Køber
                         $"\tSælgerID: {Convert.ToString(rdr[2])}\n" +
                         $"\tPris: {Convert.ToString(rdr[3])}\n" +
                         $"\tM2: {Convert.ToString(rdr[4])}\n" +
-                        $"\tPostNr: {Convert.ToString(rdr[5])}\n" +
-                        $"\tOprettelsesDato: {Convert.ToString(rdr[6])}\n" +
-                        $"\tHandelsDato: {Convert.ToString(rdr[7])}\n" +
-                        "}\n");
+                        $"\tBy: {Convert.ToString(rdr[5])}\n" +
+                        $"\tPostNr: {Convert.ToString(rdr[6])}\n" +
+                        $"\tAdresse: {Convert.ToString(rdr[7])}\n" +
+                        $"\tEtager: {Convert.ToString(rdr[8])}\n" +                               
+                        $"\tByggeår: {Convert.ToString(rdr[9])}\n" +
+                        $"\tBoligtype: {Convert.ToString(rdr[10])}\n" +
+                        $"\tVærelser: {Convert.ToString(rdr[11])}\n" +
+                        $"\tEnergimærke: {Convert.ToString(rdr[12])}\n" +
+                        $"\tOprettelsesDato: {Convert.ToString(rdr[13])}\n" +
+                        $"\tHandelsDato: {Convert.ToString(rdr[14])}\n" +
+                        "}\n"); ;
                 }
             }
             rdr.Close();

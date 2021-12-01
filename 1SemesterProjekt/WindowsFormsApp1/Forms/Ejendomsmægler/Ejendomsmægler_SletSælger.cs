@@ -55,9 +55,17 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                 #endregion PassToGrid
 
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show($"{ex}");
+                if (ex.Number == 1451)
+                {
+                    MessageBox.Show("Sælger kan ikke slættes, da han er tilknyttet boliger");
+                }
+                else
+                {
+                    MessageBox.Show($"{ex.Number}");
+                }
+                
             }
         }
     }

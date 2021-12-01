@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1.Forms.Sælger
 {
-    partial class Sælger_SingePage
+    partial class Sælger
     {
         /// <summary>
         /// Required designer variable.
@@ -35,20 +35,18 @@ namespace WindowsFormsApp1.Forms.Sælger
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(18, 14);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(12, 9);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1163, 756);
+            this.panel1.Size = new System.Drawing.Size(1492, 458);
             this.panel1.TabIndex = 10;
             // 
-            // Sælger_SingePage
+            // Sælger
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 775);
+            this.ClientSize = new System.Drawing.Size(1515, 476);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Sælger_SingePage";
+            this.Name = "Sælger";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sælger_Singepage";
             this.ResumeLayout(false);

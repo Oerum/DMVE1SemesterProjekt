@@ -58,7 +58,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(315, 13);
+            this.label6.Location = new System.Drawing.Point(699, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(257, 31);
             this.label6.TabIndex = 46;
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 217);
+            this.button1.Location = new System.Drawing.Point(17, 378);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 42);
             this.button1.TabIndex = 45;
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 191);
+            this.textBox1.Location = new System.Drawing.Point(16, 352);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(104, 20);
             this.textBox1.TabIndex = 44;
@@ -100,7 +100,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 164);
+            this.label1.Location = new System.Drawing.Point(12, 325);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 24);
             this.label1.TabIndex = 43;
@@ -124,7 +124,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.dataGridView1.DataSource = this.sælgerBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(138, 47);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(652, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(1360, 730);
             this.dataGridView1.TabIndex = 42;
             // 
             // iDDataGridViewTextBoxColumn
@@ -182,7 +182,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1500, 779);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);

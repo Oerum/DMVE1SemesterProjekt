@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Forms.Sælger
 {
-    public partial class Sælger_SingePage : Form
+    public partial class Sælger : Form
     {
-        public Sælger_SingePage()
+        public Sælger()
         {
             InitializeComponent();
             panel1.Controls.Clear();

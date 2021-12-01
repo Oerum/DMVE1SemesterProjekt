@@ -58,14 +58,21 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                             writer.WriteLine(
 
                                 "{\n" +
-                                $"\tPostNr: {Convert.ToString(rdr[5])}\n" +
+                                $"\tPostNr: {Convert.ToString(rdr[6])}\n" +
                                 $"\tBoligID: {Convert.ToString(rdr[0])}\n" +
                                 $"\tKøberID: {Convert.ToString(rdr[1])}\n" +
                                 $"\tSælgerID: {Convert.ToString(rdr[2])}\n" +
                                 $"\tPris: {Convert.ToString(rdr[3])}\n" +
                                 $"\tM2: {Convert.ToString(rdr[4])}\n" +
-                                $"\tOprettelsesDato: {Convert.ToString(rdr[6])}\n" +
-                                $"\tHandelsDato: {Convert.ToString(rdr[7])}\n" +
+                                $"\tBy: {Convert.ToString(rdr[5])}\n" +
+                                $"\tAdresse: {Convert.ToString(rdr[7])}\n" +
+                                $"\tEtage: {Convert.ToString(rdr[8])}\n" +
+                                $"\tByggeår: {Convert.ToString(rdr[9])}\n" +
+                                $"\tBoligtype: {Convert.ToString(rdr[10])}\n" +
+                                $"\tVærelser: {Convert.ToString(rdr[11])}\n" +
+                                $"\tEnergimærke: {Convert.ToString(rdr[12])}\n" +
+                                $"\tOprettelsesDato: {Convert.ToString(rdr[13])}\n" +
+                                $"\tHandelsDato: {Convert.ToString(rdr[14])}\n" +
                                 "}\n" +
                                 "\n");
                         }

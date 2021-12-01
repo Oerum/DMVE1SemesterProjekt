@@ -44,7 +44,7 @@ namespace WindowsFormsApp1.Forms
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 24);
+            this.button1.Size = new System.Drawing.Size(197, 24);
             this.button1.TabIndex = 0;
             this.button1.Text = "Opret Bolig";
             this.button1.UseVisualStyleBackColor = true;
@@ -53,9 +53,9 @@ namespace WindowsFormsApp1.Forms
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(238, 12);
+            this.button2.Location = new System.Drawing.Point(424, 12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 24);
+            this.button2.Size = new System.Drawing.Size(214, 24);
             this.button2.TabIndex = 1;
             this.button2.Text = "Slet Bolig";
             this.button2.UseVisualStyleBackColor = true;
@@ -64,9 +64,9 @@ namespace WindowsFormsApp1.Forms
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(117, 12);
+            this.button3.Location = new System.Drawing.Point(215, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 24);
+            this.button3.Size = new System.Drawing.Size(203, 24);
             this.button3.TabIndex = 2;
             this.button3.Text = "Opdater Bolig";
             this.button3.UseVisualStyleBackColor = true;
@@ -77,15 +77,15 @@ namespace WindowsFormsApp1.Forms
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(795, 459);
+            this.panel1.Size = new System.Drawing.Size(1475, 744);
             this.panel1.TabIndex = 3;
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(449, 12);
+            this.button4.Location = new System.Drawing.Point(862, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 24);
+            this.button4.Size = new System.Drawing.Size(209, 24);
             this.button4.TabIndex = 4;
             this.button4.Text = "Opret Sælger";
             this.button4.UseVisualStyleBackColor = true;
@@ -94,9 +94,9 @@ namespace WindowsFormsApp1.Forms
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(571, 12);
+            this.button5.Location = new System.Drawing.Point(1077, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 24);
+            this.button5.Size = new System.Drawing.Size(205, 24);
             this.button5.TabIndex = 5;
             this.button5.Text = "Opdater Sælger";
             this.button5.UseVisualStyleBackColor = true;
@@ -105,9 +105,9 @@ namespace WindowsFormsApp1.Forms
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(707, 12);
+            this.button6.Location = new System.Drawing.Point(1288, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 24);
+            this.button6.Size = new System.Drawing.Size(199, 24);
             this.button6.TabIndex = 6;
             this.button6.Text = "Slet Sælger";
             this.button6.UseVisualStyleBackColor = true;
@@ -116,9 +116,9 @@ namespace WindowsFormsApp1.Forms
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(343, 12);
+            this.button7.Location = new System.Drawing.Point(644, 12);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 24);
+            this.button7.Size = new System.Drawing.Size(212, 24);
             this.button7.TabIndex = 7;
             this.button7.Text = "Solgte Bolig";
             this.button7.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(819, 502);
+            this.ClientSize = new System.Drawing.Size(1498, 788);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);

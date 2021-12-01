@@ -16,7 +16,17 @@ namespace WindowsFormsApp1.Forms
         public Ejendomsmægler_SletBolig()
         {
             InitializeComponent();
-            this.boligTilSalgTableAdapter.Fill(this.ejendomsmæglerDataSet.BoligTilSalg);
+            #region PassToGrid
+            DB db = new DB();
+            MySqlConnection conn = new MySqlConnection(db.ConnStr);
+            DataTable tbl = new DataTable();
+            string sqlshow = "SELECT * FROM BoligTilSalg;";
+            MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
+            conn.Open();
+            tbl.Load(cmd1.ExecuteReader());
+            dataGridView1.DataSource = tbl;
+            conn.Close();
+            #endregion PassToGrid
         }
 
         private void button1_Click(object sender, EventArgs e)

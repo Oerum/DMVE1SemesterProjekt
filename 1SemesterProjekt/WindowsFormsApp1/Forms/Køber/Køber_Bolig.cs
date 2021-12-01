@@ -18,8 +18,16 @@ namespace WindowsFormsApp1.Forms.Køber
         string SælgerID { get; set; }
         string Pris { get; set; }
         string M2 { get; set; }
+        string By { get; set; }
         string PostNr { get; set; }
-        string Dato { get; set; }
+        string Adresse { get; set; }
+        string Etager { get; set; }
+        string Byggeår { get; set; }
+        string Boligtype { get; set; }
+        string Værelser { get; set; }
+        string Energimærke { get; set; }
+        string OprettelsesDato { get; set; }
+
         public Køber_Bolig()
         {
             InitializeComponent();
@@ -65,8 +73,15 @@ namespace WindowsFormsApp1.Forms.Køber
                     SælgerID = Convert.ToString(rdr[1]);
                     Pris = Convert.ToString(rdr[2]);
                     M2 = Convert.ToString(rdr[3]);
-                    PostNr = Convert.ToString(rdr[4]);
-                    Dato = Convert.ToString(rdr[5]);
+                    By = Convert.ToString(rdr[4]);
+                    PostNr = Convert.ToString(rdr[5]);
+                    Adresse = Convert.ToString(rdr[6]);
+                    Etager = Convert.ToString(rdr[7]);
+                    Byggeår = Convert.ToString(rdr[8]);
+                    Boligtype = Convert.ToString(rdr[9]);
+                    Værelser = Convert.ToString(rdr[10]);
+                    Energimærke = Convert.ToString(rdr[11]);
+                    OprettelsesDato = Convert.ToString(rdr[12]);
                 }
                 rdr.Close();
                 conn.Close();
@@ -76,7 +91,7 @@ namespace WindowsFormsApp1.Forms.Køber
                 MessageBox.Show($"{ex.Number}");
             }
 
-            if (BoligID != null && Køber_Login.Køber_ID_LoggedIn != null && Pris != null && M2 != null && PostNr != null && PostNr != null && Dato != null)
+            if (BoligID != null && Køber_Login.Køber_ID_LoggedIn != null && Pris != null && M2 != null && PostNr != null && PostNr != null && OprettelsesDato != null)
             { 
                 try
                 {
@@ -86,13 +101,20 @@ namespace WindowsFormsApp1.Forms.Køber
 
 
                     MySqlCommand Køb = new MySqlCommand(cmd_Køb, conn);
-                    Køb.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));
-                    Køb.Parameters.AddWithValue("@KøberID", int.Parse(Køber_Login.Køber_ID_LoggedIn));
-                    Køb.Parameters.AddWithValue("@SælgerID", int.Parse(SælgerID));
-                    Køb.Parameters.AddWithValue("@Pris", int.Parse(Pris));
-                    Køb.Parameters.AddWithValue("@M2", int.Parse(M2));
+                    Køb.Parameters.AddWithValue("@BoligID", Convert.ToInt32(BoligID));
+                    Køb.Parameters.AddWithValue("@KøberID", Convert.ToInt32(Køber_Login.Køber_ID_LoggedIn));
+                    Køb.Parameters.AddWithValue("@SælgerID", Convert.ToInt32(SælgerID));
+                    Køb.Parameters.AddWithValue("@Pris", Convert.ToInt32(Pris));
+                    Køb.Parameters.AddWithValue("@M2", Convert.ToInt32(M2));
+                    Køb.Parameters.AddWithValue("@By", By);
                     Køb.Parameters.AddWithValue("@PostNr", PostNr);
-                    Køb.Parameters.AddWithValue("@OprettelsesDato", Convert.ToDateTime(Dato));
+                    Køb.Parameters.AddWithValue("@Adresse", Adresse);
+                    Køb.Parameters.AddWithValue("@Etager", Etager);
+                    Køb.Parameters.AddWithValue("@Byggeår", Byggeår);
+                    Køb.Parameters.AddWithValue("@Boligtype", Boligtype);
+                    Køb.Parameters.AddWithValue("@Værelser", Convert.ToInt32(Værelser));
+                    Køb.Parameters.AddWithValue("@Energimærke", Energimærke);
+                    Køb.Parameters.AddWithValue("@OprettelsesDato", Convert.ToDateTime(OprettelsesDato));
 
 
                     conn.Open();
@@ -180,8 +202,15 @@ namespace WindowsFormsApp1.Forms.Køber
                         $"\tSælgerID: {Convert.ToString(rdr[1])}\n" +
                         $"\tPris: {Convert.ToString(rdr[2])}\n" +
                         $"\tM2: {Convert.ToString(rdr[3])}\n" +
-                        $"\tPostNr: {Convert.ToString(rdr[4])}\n" +
-                        $"\tOprettelsesDato: {Convert.ToString(rdr[5])}\n" +
+                        $"\tBy: {Convert.ToString(rdr[4])}\n" +
+                        $"\tPostNr: {Convert.ToString(rdr[5])}\n" +
+                        $"\tAdresse: {Convert.ToString(rdr[6])}\n" +
+                        $"\tEtager: {Convert.ToString(rdr[7])}\n" +
+                        $"\tByggeår: {Convert.ToString(rdr[8])}\n" +
+                        $"\tBoligtype: {Convert.ToString(rdr[9])}\n" +
+                        $"\tVærelser: {Convert.ToString(rdr[10])}\n" +
+                        $"\tEnergimærke: {Convert.ToString(rdr[11])}\n" +
+                        $"\tOprettelsesDato: {Convert.ToString(rdr[12])}\n" +
                         "}\n");
                 }
             }

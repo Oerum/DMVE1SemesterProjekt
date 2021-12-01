@@ -43,6 +43,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.boligIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OprettelsesDato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.solgteBoligBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -54,11 +55,11 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 423);
+            this.button1.Location = new System.Drawing.Point(12, 747);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(780, 20);
+            this.button1.Size = new System.Drawing.Size(698, 20);
             this.button1.TabIndex = 44;
-            this.button1.Text = "Download txt fil";
+            this.button1.Text = "Hent informationer for PostNr";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -144,14 +145,24 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.dataGridView1.DataSource = this.solgteBoligBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 7);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(780, 410);
+            this.dataGridView1.Size = new System.Drawing.Size(1345, 734);
             this.dataGridView1.TabIndex = 43;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(716, 747);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(641, 20);
+            this.button2.TabIndex = 45;
+            this.button2.Text = "Hent informationer for Dato";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Ejendomsmægler_SolgteBolig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1361, 772);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -179,5 +190,6 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
         private System.Windows.Forms.DataGridViewTextBoxColumn boligIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn OprettelsesDato;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button2;
     }
 }

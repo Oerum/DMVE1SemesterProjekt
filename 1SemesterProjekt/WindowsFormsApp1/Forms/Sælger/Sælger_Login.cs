@@ -57,7 +57,7 @@ namespace WindowsFormsApp1.Forms.Sælger
 
                 if (textBox1.Text == UserName && textBox2.Text == PassWord)
                 {
-                    Sælger_SingePage SP = new Sælger_SingePage();
+                    Sælger SP = new Sælger();
                     SP.Show();
                     this.Hide();
                 }

@@ -89,7 +89,6 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\Windows
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Køber.Køber_SinglePage.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger_Login.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger_OpdaterBolig.resources
-C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger_SingePage.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
@@ -98,3 +97,4 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\Windows
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_InputPostNr.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_SolgteBolig.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger.resources

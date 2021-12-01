@@ -212,11 +212,11 @@
     <Compile Include="Forms\Sælger\Sælger_OpdaterBolig.Designer.cs">
       <DependentUpon>Sælger_OpdaterBolig.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Sælger\Sælger_SingePage.cs">
+    <Compile Include="Forms\Sælger\Sælger_SinglePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Sælger\Sælger_SingePage.Designer.cs">
-      <DependentUpon>Sælger_SingePage.cs</DependentUpon>
+    <Compile Include="Forms\Sælger\Sælger_SinglePage.Designer.cs">
+      <DependentUpon>Sælger_SinglePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -277,8 +277,8 @@
     <EmbeddedResource Include="Forms\Sælger\Sælger_OpdaterBolig.resx">
       <DependentUpon>Sælger_OpdaterBolig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Sælger\Sælger_SingePage.resx">
-      <DependentUpon>Sælger_SingePage.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Sælger\Sælger_SinglePage.resx">
+      <DependentUpon>Sælger_SinglePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

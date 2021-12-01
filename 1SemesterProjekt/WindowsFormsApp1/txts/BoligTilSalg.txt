@@ -1,0 +1,17 @@
+﻿{
+	NR: 1
+	BoligID: 1
+	SælgerID: 1
+	Pris: 8000000
+	M2: 400
+	By: Vejle
+	PostNr: 7100
+	Adresse: Jyllandsgade
+	Etager: 4
+	Byggeår: 2021
+	Boligtype: Lejlighed
+	Værelser: 10
+	Energimærke: A
+	OprettelsesDato: 01-12-2021 19:46:02
+}
+

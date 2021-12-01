@@ -4,5 +4,13 @@
 
     partial class EjendomsmæglerDataSet
     {
+        partial class BoligTilSalgDataTable
+        {
+        }
+
+        partial class SolgteBoligDataTable
+        {
+
+        }
     }
 }

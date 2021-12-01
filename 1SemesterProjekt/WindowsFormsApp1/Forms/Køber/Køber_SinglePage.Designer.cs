@@ -40,9 +40,9 @@ namespace WindowsFormsApp1.Forms.Køber
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(685, 12);
+            this.button2.Location = new System.Drawing.Point(1119, 15);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 24);
+            this.button2.Size = new System.Drawing.Size(376, 23);
             this.button2.TabIndex = 20;
             this.button2.Text = "Konto";
             this.button2.UseVisualStyleBackColor = true;
@@ -53,15 +53,15 @@ namespace WindowsFormsApp1.Forms.Køber
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 42);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 459);
+            this.panel1.Size = new System.Drawing.Size(1483, 459);
             this.panel1.TabIndex = 17;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(473, 12);
+            this.button1.Location = new System.Drawing.Point(198, 15);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 24);
+            this.button1.Size = new System.Drawing.Size(403, 23);
             this.button1.TabIndex = 14;
             this.button1.Text = "Boliger";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@ namespace WindowsFormsApp1.Forms.Køber
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(578, 12);
+            this.button3.Location = new System.Drawing.Point(647, 15);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(101, 24);
+            this.button3.Size = new System.Drawing.Size(417, 23);
             this.button3.TabIndex = 21;
             this.button3.Text = "Ordre";
             this.button3.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@ namespace WindowsFormsApp1.Forms.Køber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 507);
+            this.ClientSize = new System.Drawing.Size(1500, 507);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);

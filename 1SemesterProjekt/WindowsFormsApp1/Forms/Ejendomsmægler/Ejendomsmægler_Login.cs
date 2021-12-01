@@ -66,9 +66,13 @@ namespace WindowsFormsApp1.Forms
                     MessageBox.Show("Brugernavn eller Kodeord er ugyldigt");
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                MessageBox.Show($"{ex}");
+                if (ex.Number == 1042)
+                {
+                    MessageBox.Show("Kunne ikke oprette forbindelse til server");
+                }
+                MessageBox.Show($"{ex.Number}");
             }
         }
 
