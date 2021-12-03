@@ -29,65 +29,73 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
 
             try
             {
-                if (InputPostNr != null)
+                try
                 {
-                    DB db = new DB();
-                    MySqlConnection conn = new MySqlConnection(db.ConnStr);
-
-                    string filePath = @"..\..\txts\BoligTilSalgPostNr.txt";
-                    /*
-                    if (!File.Exists(filePath))
+                    if (InputPostNr != null)
                     {
-                        File.CreateText(filePath).Dispose();
-                    }
-                    */
-                    string cmd_TxtPrint = "SELECT * FROM SolgteBolig WHERE PostNr = @PostNr";
-                    MySqlCommand TxtPrint = new MySqlCommand(cmd_TxtPrint, conn);
-                    TxtPrint.Parameters.AddWithValue("@PostNr", InputPostNr);
+                        DB db = new DB();
+                        MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
-                    conn.Open();
-                    MySqlDataReader rdr = TxtPrint.ExecuteReader();
-
-                    // Change the Encoding to what you need here (UTF8, Unicode, etc)
-                    using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
-                    {
-                        while (rdr.Read())
+                        string filePath = @"..\..\txts\BoligTilSalgPostNr.txt";
+                        /*
+                        if (!File.Exists(filePath))
                         {
-                            int Sum = 0;
-                            Sum += Convert.ToInt32(rdr[3]);
-                            writer.WriteLine(
-
-                                "{\n" +
-                                $"\tPostNr: {Convert.ToString(rdr[6])}\n" +
-                                $"\tBoligID: {Convert.ToString(rdr[0])}\n" +
-                                $"\tKøberID: {Convert.ToString(rdr[1])}\n" +
-                                $"\tSælgerID: {Convert.ToString(rdr[2])}\n" +
-                                $"\tPris: {Convert.ToString(rdr[3])}\n" +
-                                $"\tM2: {Convert.ToString(rdr[4])}\n" +
-                                $"\tBy: {Convert.ToString(rdr[5])}\n" +
-                                $"\tAdresse: {Convert.ToString(rdr[7])}\n" +
-                                $"\tEtage: {Convert.ToString(rdr[8])}\n" +
-                                $"\tByggeår: {Convert.ToString(rdr[9])}\n" +
-                                $"\tBoligtype: {Convert.ToString(rdr[10])}\n" +
-                                $"\tVærelser: {Convert.ToString(rdr[11])}\n" +
-                                $"\tEnergimærke: {Convert.ToString(rdr[12])}\n" +
-                                $"\tOprettelsesDato: {Convert.ToString(rdr[13])}\n" +
-                                $"\tHandelsDato: {Convert.ToString(rdr[14])}\n" +
-                                "}\n" +
-                                "\n");
+                            File.CreateText(filePath).Dispose();
                         }
-                    }
-                    rdr.Close();
-                    conn.Close();
+                        */
+                        string cmd_TxtPrint = "SELECT * FROM SolgteBolig WHERE PostNr = @PostNr";
+                        MySqlCommand TxtPrint = new MySqlCommand(cmd_TxtPrint, conn);
+                        TxtPrint.Parameters.AddWithValue("@PostNr", InputPostNr);
 
-                    MessageBox.Show($"Fil Hentet: {filePath}");
+                        conn.Open();
+                        MySqlDataReader rdr = TxtPrint.ExecuteReader();
+
+                        // Change the Encoding to what you need here (UTF8, Unicode, etc)
+                        using (StreamWriter writer = new StreamWriter(filePath, false, Encoding.UTF8))
+                        {
+                            while (rdr.Read())
+                            {
+                                int Sum = 0;
+                                Sum += Convert.ToInt32(rdr[3]);
+                                writer.WriteLine(
+
+                                    "{\n" +
+                                    $"\tPostNr: {Convert.ToString(rdr[6])}\n" +
+                                    $"\tBoligID: {Convert.ToString(rdr[0])}\n" +
+                                    $"\tKøberID: {Convert.ToString(rdr[1])}\n" +
+                                    $"\tSælgerID: {Convert.ToString(rdr[2])}\n" +
+                                    $"\tPris: {Convert.ToString(rdr[3])}\n" +
+                                    $"\tM2: {Convert.ToString(rdr[4])}\n" +
+                                    $"\tBy: {Convert.ToString(rdr[5])}\n" +
+                                    $"\tAdresse: {Convert.ToString(rdr[7])}\n" +
+                                    $"\tEtage: {Convert.ToString(rdr[8])}\n" +
+                                    $"\tByggeår: {Convert.ToString(rdr[9])}\n" +
+                                    $"\tBoligtype: {Convert.ToString(rdr[10])}\n" +
+                                    $"\tVærelser: {Convert.ToString(rdr[11])}\n" +
+                                    $"\tEnergimærke: {Convert.ToString(rdr[12])}\n" +
+                                    $"\tOprettelsesDato: {Convert.ToString(rdr[13])}\n" +
+                                    $"\tHandelsDato: {Convert.ToString(rdr[14])}\n" +
+                                    "}\n" +
+                                    "\n");
+                            }
+                        }
+                        rdr.Close();
+                        conn.Close();
+
+                        MessageBox.Show($"Fil Hentet: {filePath}");
+                    }
+                    this.Hide();
                 }
-                this.Hide();
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"{ex}");
+                }
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show($"{ex}");
+                MessageBox.Show("Ugyldigt PostNr");
             }
+            
             
         }
     }

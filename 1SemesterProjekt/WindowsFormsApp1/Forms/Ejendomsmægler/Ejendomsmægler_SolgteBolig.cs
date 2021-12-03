@@ -51,9 +51,18 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             }
               
         }
-        private void PrintFile()
+
+        private void button2_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                Ejendomsmægler_InputDato Dato = new Ejendomsmægler_InputDato();
+                Dato.Show();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show($"{ex}");
+            }
         }
     }
 }

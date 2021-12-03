@@ -41,7 +41,7 @@ namespace WindowsFormsApp1.Forms
 
 
                     string sql = "INSERT INTO BoligTilSalg(SælgerID, Pris, M2, `By`, PostNr, Adresse, Etager, Byggeår, Boligtype, Værelser, Energimærke, OprettelsesDato) " +
-                                 "VALUES(@SælgerID, @Pris, @M2, @By, @PostNr, @Adresse, @Etager, @Byggeår, @Boligtype, @Værelser, @Energimærke, CURRENT_TIMESTAMP);";
+                                 "VALUES(@SælgerID, @Pris, @M2, @By, @PostNr, @Adresse, @Etager, @Byggeår, @Boligtype, @Værelser, @Energimærke, CURRENT_Date);";
 
 
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -80,12 +80,12 @@ namespace WindowsFormsApp1.Forms
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show($"{ex}");
+                    MessageBox.Show($"{ex.Number} = {ex}");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Udfyld alle felter" + ex);
+                MessageBox.Show($"Udfyld alle felter");
             }
 
             
