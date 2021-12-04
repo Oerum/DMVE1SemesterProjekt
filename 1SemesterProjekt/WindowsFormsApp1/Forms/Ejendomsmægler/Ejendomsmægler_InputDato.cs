@@ -12,11 +12,30 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Forms.Ejendomsmægler
 {
+    public class BoligUdtræk
+    {
+        public int BoligID { get; set; }
+        public int KøberID { get; set; }
+        public int SælgerID { get; set; }
+        public int Pris { get; set; }
+        public int M2 { get; set; }
+        public string By { get; set; }
+        public string PostNr { get; set; }
+        public string Adresse { get; set; }
+        public int Etager { get; set; }
+        public int Byggeår { get; set; }
+        public string Boligtype { get; set; }
+        public int Værelser { get; set; }
+        public string Energimærke { get; set; }
+        public string OprettelsesDato { get; set; }
+        public string HandelsDato { get; set; }
+    }
+
     public partial class Ejendomsmægler_InputDato : Form
     {
         public static string Dato1 { get; set; }
         public static string Dato2 { get; set; }
-        public static List<string> BoligUdtræk = new List<string>() { };
+        public static List<BoligUdtræk> BoligUdtrækList = new List<BoligUdtræk>();
 
         public Ejendomsmægler_InputDato()
         {
@@ -60,21 +79,25 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                         MySqlDataReader rdr = cmd.ExecuteReader();
                         while (rdr.Read())
                         {
-                            BoligUdtræk.Add($"SælgerID = {Convert.ToString(rdr[2])}" +
-                            $"\nBoligID = {Convert.ToString(rdr[0])}" +
-                            $"\nKøberID = {Convert.ToString(rdr[1])}" +
-                            $"\nPris = {Convert.ToString(rdr[3])}" +
-                            $"\nM2 = {Convert.ToString(rdr[4])}" +
-                            $"\nBy = {Convert.ToString(rdr[5])}" +
-                            $"\nPostNr = {Convert.ToString(rdr[6])}" +
-                            $"\nAdresse = {Convert.ToString(rdr[7])}" +
-                            $"\nEtager = {Convert.ToString(rdr[8])}" +
-                            $"\nByggeår = {Convert.ToString(rdr[9])}" +
-                            $"\nBoligtype = {Convert.ToString(rdr[10])}" +
-                            $"\nVærelser = {Convert.ToString(rdr[11])}" +
-                            $"\nEnergimærke = {Convert.ToString(rdr[12])}" +
-                            $"\nOprettelsesDato = {Convert.ToString(rdr[13])}" +
-                            $"\nHandelsDato = {Convert.ToString(rdr[14])}\n");
+                            BoligUdtræk newItem = new BoligUdtræk();
+
+                            newItem.SælgerID = Convert.ToInt32(rdr[2]);
+                            newItem.BoligID = Convert.ToInt32(rdr[0]);
+                            newItem.KøberID = Convert.ToInt32(rdr[1]);
+                            newItem.Pris = Convert.ToInt32(rdr[3]);
+                            newItem.M2 = Convert.ToInt32(rdr[4]);
+                            newItem.By = Convert.ToString(rdr[5]);
+                            newItem.PostNr = Convert.ToString(rdr[6]);
+                            newItem.Adresse = Convert.ToString(rdr[7]);
+                            newItem.Etager = Convert.ToInt32(rdr[8]);
+                            newItem.Byggeår = Convert.ToInt32(rdr[9]);
+                            newItem.Boligtype = Convert.ToString(rdr[10]);
+                            newItem.Værelser = Convert.ToInt32(rdr[11]);
+                            newItem.Energimærke = Convert.ToString(rdr[12]);
+                            newItem.OprettelsesDato = Convert.ToString(rdr[13]);
+                            newItem.HandelsDato = Convert.ToString(rdr[14]);
+
+                            BoligUdtrækList.Add(newItem);
                         }
                         rdr.Close();
 

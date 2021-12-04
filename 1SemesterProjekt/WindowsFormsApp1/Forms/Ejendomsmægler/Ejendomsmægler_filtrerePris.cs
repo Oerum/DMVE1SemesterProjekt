@@ -22,16 +22,16 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
         private void button1_Click(object sender, EventArgs e)
         {
             #region PassToGrid
-            List<string> BoligUdtræk = Ejendomsmægler_InputDato.BoligUdtræk;
+            List<BoligUdtræk> BoligUdtræk = Ejendomsmægler_InputDato.BoligUdtrækList;
 
             int choice = Convert.ToInt32(textBox1.Text);
 
-            int index = BoligUdtræk.FindIndex(str => str.Contains("Pris = "));
-            var value = BoligUdtræk.Find(str => str == "Pris = ");
+            //int index = BoligUdtræk.FindIndex(str => str.Contains("Pris = "));
+            //var value = BoligUdtræk.Find(str => str == "Pris = ");
 
-            Console.WriteLine(value);
+            //Console.WriteLine(value);
 
-            foreach (var v in BoligUdtræk[index])
+            foreach (var v in BoligUdtræk)
             {  
                 Console.Write(v);
             }

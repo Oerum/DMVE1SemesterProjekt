@@ -19,12 +19,11 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             try
             {
                 #region PassToGrid
-                List<string> BoligUdtræk = Ejendomsmægler_InputDato.BoligUdtræk;
-
-                foreach (var v in BoligUdtræk)
+           
+                foreach (var v in Ejendomsmægler_InputDato.BoligUdtrækList)
                 {
                     //int x = 1;
-                    dataGridView1.Columns.Add("Keys", $"{v}");
+                    dataGridView1.Columns.Add("Keys", $"SælgerID: {v.SælgerID}\n\nBoligID: {v.BoligID}\nKøberID: {v.KøberID}\nPris: {v.Pris}\nM2: {v.M2}\nBy: {v.By}\nPostNr: {v.PostNr}\nAdresse: {v.Adresse}\nEtager: {v.Etager}\nByggeår: {v.Byggeår}\nBoligtype: {v.Boligtype}\nVærelser: {v.Værelser}\nEnergimærke: {v.Energimærke}\nOprettelsesDato: {v.OprettelsesDato}\nHandelsDato: {v.HandelsDato}");
                 }
 
                 /*
