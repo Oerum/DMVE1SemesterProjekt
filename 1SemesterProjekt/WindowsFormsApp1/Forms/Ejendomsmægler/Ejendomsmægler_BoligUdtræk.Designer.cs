@@ -46,7 +46,6 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             this.solgteBoligBindingSource.DataMember = "SolgteBolig";
             this.solgteBoligBindingSource.DataSource = this.ejendomsmæglerDataSet;
-            this.solgteBoligBindingSource.CurrentChanged += new System.EventHandler(this.solgteBoligBindingSource_CurrentChanged);
             // 
             // ejendomsmæglerDataSet
             // 
@@ -61,7 +60,6 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             this.solgteBoligBindingSource1.DataMember = "SolgteBolig";
             this.solgteBoligBindingSource1.DataSource = this.ejendomsmæglerDataSet;
-            this.solgteBoligBindingSource1.CurrentChanged += new System.EventHandler(this.solgteBoligBindingSource1_CurrentChanged);
             // 
             // dataGridView1
             // 
@@ -72,7 +70,6 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.Size = new System.Drawing.Size(1242, 568);
             this.dataGridView1.TabIndex = 46;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
