@@ -15,6 +15,14 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
         public Ejendomsmægler_BoligUdtrækPris()
         {
             InitializeComponent();
+
+            foreach (var v in Ejendomsmægler_InputDato.BoligUdtrækList)
+            {
+                if (v.Pris >= Ejendomsmægler_filtrerePris.Choice)
+                {
+                    dataGridView1.Columns.Add("Keys", $"SælgerID: {v.SælgerID}\n\nBoligID: {v.BoligID}\nKøberID: {v.KøberID}\nPris: {v.Pris}\nM2: {v.M2}\nBy: {v.By}\nPostNr: {v.PostNr}\nAdresse: {v.Adresse}\nEtager: {v.Etager}\nByggeår: {v.Byggeår}\nBoligtype: {v.Boligtype}\nVærelser: {v.Værelser}\nEnergimærke: {v.Energimærke}\nOprettelsesDato: {v.OprettelsesDato}\nHandelsDato: {v.HandelsDato}");
+                }
+            }
         }
     }
 }

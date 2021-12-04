@@ -13,7 +13,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
 {
     public partial class Ejendomsmægler_filtrerePris : Form
     {
-        char test { get; set; }
+        public static int Choice { get; set; }
         public Ejendomsmægler_filtrerePris()
         {
             InitializeComponent();
@@ -21,26 +21,9 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
 
         private void button1_Click(object sender, EventArgs e)
         {
-            #region PassToGrid
-            List<BoligUdtræk> BoligUdtræk = Ejendomsmægler_InputDato.BoligUdtrækList;
-
-            int choice = Convert.ToInt32(textBox1.Text);
-
-            //int index = BoligUdtræk.FindIndex(str => str.Contains("Pris = "));
-            //var value = BoligUdtræk.Find(str => str == "Pris = ");
-
-            //Console.WriteLine(value);
-
-            foreach (var v in BoligUdtræk)
-            {  
-                Console.Write(v);
-            }
-
+            Choice = Convert.ToInt32(textBox1.Text);
             Ejendomsmægler_BoligUdtrækPris boligUdtrækPris = new Ejendomsmægler_BoligUdtrækPris();
             boligUdtrækPris.Show();
-
-            Console.WriteLine(test);
-            #endregion PassToGrid
         }
     }
 }

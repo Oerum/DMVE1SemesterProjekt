@@ -58,9 +58,11 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 23);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(621, 289);
+            this.dataGridView1.RowHeadersWidth = 82;
+            this.dataGridView1.Size = new System.Drawing.Size(1242, 581);
             this.dataGridView1.TabIndex = 48;
             // 
             // solgteBoligBindingSource
@@ -70,11 +72,12 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             // 
             // Ejendomsmægler_BoligUdtrækPris
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 309);
+            this.ClientSize = new System.Drawing.Size(1288, 619);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Ejendomsmægler_BoligUdtrækPris";
             this.Text = "Ejendomsmægler_BoligUdtrækPris";
             ((System.ComponentModel.ISupportInitialize)(this.ejendomsmæglerDataSet)).EndInit();

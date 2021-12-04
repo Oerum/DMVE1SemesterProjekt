@@ -117,12 +117,12 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show($"Udfyld I korrekt format {ex}");
+                    MessageBox.Show($"Udfyld I korrekt format");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Udfyld alle felter" + ex);
+                MessageBox.Show($"Udfyld alle felter");
             }
 
 
