@@ -51,8 +51,8 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
 
         private void button1_Click(object sender, EventArgs e)
         {
-             Ejendomsmægler_filtrerePris Pris = new Ejendomsmægler_filtrerePris();
-            Pris.Show();
+            Ejendomsmægler_BoligUdtrækPris boligUdtrækPris = new Ejendomsmægler_BoligUdtrækPris();
+            boligUdtrækPris.Show();
             this.Hide();
         }
 
