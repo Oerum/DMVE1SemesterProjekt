@@ -65,7 +65,7 @@ namespace WindowsFormsApp1.Forms.Køber
                     string cmd_BoligValg = "SELECT * FROM BoligTilSalg Where BoligID = @BoligID";
 
                     MySqlCommand BoligValg = new MySqlCommand(cmd_BoligValg, conn);
-                    BoligValg.Parameters.AddWithValue("@BoligID", int.Parse(textBox1.Text));
+                    BoligValg.Parameters.AddWithValue("@BoligID", Convert.ToInt32(textBox1.Text));
 
                     conn.Open();
                     MySqlDataReader rdr = BoligValg.ExecuteReader();
@@ -131,8 +131,6 @@ namespace WindowsFormsApp1.Forms.Køber
 
                     try
                     {
-
-
                         string cmd_Slet = "DELETE FROM BoligTilSalg WHERE BoligID = @BoligID;";
                         MySqlCommand Slet = new MySqlCommand(cmd_Slet, conn);
                         Slet.Parameters.AddWithValue("@BoligID", int.Parse(BoligID));

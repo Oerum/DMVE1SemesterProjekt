@@ -101,10 +101,6 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                         }
                         rdr.Close();
 
-                        /*
-                        foreach (var attri in BoligUdtræk)
-                            Console.WriteLine($"{attri} ");
-                        */
                         Ejendomsmægler_BoligUdtræk boligUdtrækForm = new Ejendomsmægler_BoligUdtræk();
                         boligUdtrækForm.Show();
                         this.Hide();
