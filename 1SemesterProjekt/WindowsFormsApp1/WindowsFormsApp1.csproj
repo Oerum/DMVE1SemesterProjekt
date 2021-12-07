@@ -122,12 +122,6 @@
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_BoligUdtrækPris.Designer.cs">
       <DependentUpon>Ejendomsmægler_BoligUdtrækPris.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_filtrerePris.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_filtrerePris.Designer.cs">
-      <DependentUpon>Ejendomsmægler_filtrerePris.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_InputDato.cs" />
     <Compile Include="Forms\Ejendomsmægler\Ejendomsmægler_InputDato.Designer.cs">
       <DependentUpon>Ejendomsmægler_InputDato.cs</DependentUpon>
@@ -259,9 +253,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_BoligUdtrækPris.resx">
       <DependentUpon>Ejendomsmægler_BoligUdtrækPris.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_filtrerePris.resx">
-      <DependentUpon>Ejendomsmægler_filtrerePris.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ejendomsmægler\Ejendomsmægler_InputDato.resx">
       <DependentUpon>Ejendomsmægler_InputDato.cs</DependentUpon>

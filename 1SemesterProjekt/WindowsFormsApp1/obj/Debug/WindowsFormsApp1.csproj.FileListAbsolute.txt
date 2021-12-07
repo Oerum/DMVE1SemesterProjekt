@@ -98,9 +98,7 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\Windows
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_InputPostNr.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_SolgteBolig.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Sælger.Sælger.resources
-C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_InputDato.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_BoligUdtræk.resources
-C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.Ejendomsmægler_filtrerePris.resources
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\bin\Debug\System.Threading.Tasks.Extensions.dll
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
 C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\bin\Debug\Utf8Json.dll
@@ -170,3 +168,4 @@ C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\Windows
 \\Mac\iCloud\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 \\Mac\iCloud\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 \\Mac\iCloud\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.BoligUdtræk.resources
+C:\Users\bound\OneDrive\Skrivebord\DMVE1SemesterProjekt\1SemesterProjekt\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Forms.Ejendomsmægler.BoligUdtræk.resources

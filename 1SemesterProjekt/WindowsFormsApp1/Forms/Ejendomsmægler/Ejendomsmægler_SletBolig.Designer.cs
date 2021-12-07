@@ -63,7 +63,7 @@ namespace WindowsFormsApp1.Forms
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(735, 9);
+            this.label6.Location = new System.Drawing.Point(621, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(229, 31);
             this.label6.TabIndex = 41;
