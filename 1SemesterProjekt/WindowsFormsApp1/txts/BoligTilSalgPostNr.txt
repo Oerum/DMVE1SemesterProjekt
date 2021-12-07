@@ -1,12 +1,76 @@
 ﻿{
-	PostNr: 7200
-	BoligID: 10
+	PostNr: 7100
+	BoligID: 5
 	KøberID: 1
 	SælgerID: 1
-	Pris: 40000
-	M2: 400
-	OprettelsesDato: 01-12-2021 10:51:50
-	HandelsDato: 01-12-2021 10:58:14
+	Pris: 8500000
+	M2: 680
+	By: Vejle
+	Adresse: Stævnen
+	Etage: 3
+	Byggeår: 2019
+	Boligtype: Rækkehus
+	Værelser: 7
+	Energimærke: A
+	OprettelsesDato: 12/2/2021 12:00:00 AM
+	HandelsDato: 12/2/2021 12:00:00 AM
+}
+
+
+{
+	PostNr: 7100
+	BoligID: 6
+	KøberID: 1
+	SælgerID: 2
+	Pris: 4500000
+	M2: 250
+	By: Vejle
+	Adresse: Strandgade
+	Etage: 2
+	Byggeår: 2020
+	Boligtype: Villa
+	Værelser: 5
+	Energimærke: A
+	OprettelsesDato: 12/2/2021 12:00:00 AM
+	HandelsDato: 12/2/2021 12:00:00 AM
+}
+
+
+{
+	PostNr: 7100
+	BoligID: 7
+	KøberID: 1
+	SælgerID: 2
+	Pris: 6500000
+	M2: 450
+	By: Vejle
+	Adresse: Strandgade
+	Etage: 5
+	Byggeår: 2020
+	Boligtype: Villa
+	Værelser: 14
+	Energimærke: A
+	OprettelsesDato: 12/2/2021 12:00:00 AM
+	HandelsDato: 12/2/2021 12:00:00 AM
+}
+
+
+{
+	PostNr: 7100
+	BoligID: 8
+	KøberID: 1
+	SælgerID: 2
+	Pris: 3500000
+	M2: 250
+	By: Vejle
+	Adresse: Jyllandsgade
+	Etage: 2
+	Byggeår: 2010
+	Boligtype: Lejlighed
+	Værelser: 5
+	Energimærke: B
+	OprettelsesDato: 12/2/2021 12:00:00 AM
+	HandelsDato: 12/2/2021 12:00:00 AM
 }
 
 

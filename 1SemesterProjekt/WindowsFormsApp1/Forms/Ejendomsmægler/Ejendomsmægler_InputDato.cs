@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,20 +48,7 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             try
             {
                 try
-                {
-                    DB db = new DB();
-                    MySqlConnection conn = new MySqlConnection(db.ConnStr);
-
-
-                    string sql = "SELECT *" +
-                                "\nFROM SolgteBolig sb" +
-                                "\nWHERE HandelsDato BETWEEN @Dato1 AND @Dato2" + 
-                                "\nORDER BY SælgerID ASC;";
-
-
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-
+                {                        
                     var dateFormats = new List<string> { "dd.MM.yyyy", "dd-MM-yyyy", "dd/MM/yyyy", "ddMMyyyy", "yyyy.MM.dd", "yyyy-MM-dd", "yyyy/MM/dd", "yyyyMMdd" };
 
                     DateTime Convert_Dato1 = DateTime.ParseExact(textBox1.Text, dateFormats.ToArray(), DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None);
@@ -69,38 +57,12 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
                     Dato1 = Convert_Dato1.ToString("yyyy-MM-dd");
                     Dato2 = Convert_Dato2.ToString("yyyy-MM-dd");
 
-                    cmd.Parameters.AddWithValue("@Dato1", Dato1);
-                    cmd.Parameters.AddWithValue("@Dato2", Dato2);
-
-                    conn.Open();
+                   
                     if (Dato1 != null && Dato2 != null)
                     {
-
-                        MySqlDataReader rdr = cmd.ExecuteReader();
-                        while (rdr.Read())
-                        {
-                            BoligUdtræk newItem = new BoligUdtræk();
-
-                            newItem.SælgerID = Convert.ToInt32(rdr[2]);
-                            newItem.BoligID = Convert.ToInt32(rdr[0]);
-                            newItem.KøberID = Convert.ToInt32(rdr[1]);
-                            newItem.Pris = Convert.ToInt32(rdr[3]);
-                            newItem.M2 = Convert.ToInt32(rdr[4]);
-                            newItem.By = Convert.ToString(rdr[5]);
-                            newItem.PostNr = Convert.ToString(rdr[6]);
-                            newItem.Adresse = Convert.ToString(rdr[7]);
-                            newItem.Etager = Convert.ToInt32(rdr[8]);
-                            newItem.Byggeår = Convert.ToInt32(rdr[9]);
-                            newItem.Boligtype = Convert.ToString(rdr[10]);
-                            newItem.Værelser = Convert.ToInt32(rdr[11]);
-                            newItem.Energimærke = Convert.ToString(rdr[12]);
-                            newItem.OprettelsesDato = Convert.ToString(rdr[13]);
-                            newItem.HandelsDato = Convert.ToString(rdr[14]);
-
-                            BoligUdtrækList.Add(newItem);
-                        }
-                        rdr.Close();
-
+                        DB db = new DB();
+                        db.Ejendommægler_InputDatoSQL();
+                        
                         Ejendomsmægler_BoligUdtræk boligUdtrækForm = new Ejendomsmægler_BoligUdtræk();
                         boligUdtrækForm.Show();
                         this.Hide();

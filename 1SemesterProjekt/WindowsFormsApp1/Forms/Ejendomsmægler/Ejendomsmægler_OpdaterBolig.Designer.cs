@@ -620,10 +620,10 @@ namespace WindowsFormsApp1.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -637,7 +637,7 @@ namespace WindowsFormsApp1.Forms
         private System.Windows.Forms.BindingSource boligTilSalgBindingSource1;
         private System.Windows.Forms.BindingSource boligTilSalgBindingSource2;
         private System.Windows.Forms.BindingSource boligTilSalgBindingSource4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource boligTilSalgBindingSource5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -646,8 +646,8 @@ namespace WindowsFormsApp1.Forms
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.BindingSource boligTilSalgBindingSource6;
         private System.Windows.Forms.BindingSource boligTilSalgBindingSource7;
         private System.Windows.Forms.DataGridViewTextBoxColumn boligIDDataGridViewTextBoxColumn;
@@ -666,11 +666,11 @@ namespace WindowsFormsApp1.Forms
         private System.Windows.Forms.BindingSource sælgerBindingSource;
         private EjendomsmæglerDataSetTableAdapters.SælgerTableAdapter sælgerTableAdapter;
         private System.Windows.Forms.BindingSource sælgerBindingSource1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox textBox11;
+        public System.Windows.Forms.TextBox textBox12;
     }
 }

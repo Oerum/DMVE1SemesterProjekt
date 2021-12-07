@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,19 +14,18 @@ namespace WindowsFormsApp1.Forms
 {
     public partial class Ejendomsmægler_OpretSælger : Form
     {
+        public static string Tlf { get; set; }
+        public static string Fornavn { get; set; }
+        public static string Efternavn { get; set; }
+        public static string Brugernavn1 { get; set; }
+        public static string Kodeord1 { get; set; }
         public Ejendomsmægler_OpretSælger()
         {
             InitializeComponent();
             #region PassToGrid
             DB db = new DB();
-            MySqlConnection conn = new MySqlConnection(db.ConnStr);
-            DataTable tbl = new DataTable();
-            string sqlshow = "SELECT * FROM Sælger;";
-            MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-            conn.Open();
-            tbl.Load(cmd1.ExecuteReader());
+            DataTable tbl = db.Ejendomsmægler_OpretSælger_PassToGrid();
             dataGridView1.DataSource = tbl;
-            conn.Close();
             #endregion PassToGrid
         }
 
@@ -33,35 +33,28 @@ namespace WindowsFormsApp1.Forms
         {
             try
             {
+                Tlf = textBox2.Text;
+                Fornavn = textBox3.Text;
+                Efternavn = textBox4.Text;
+                Brugernavn1 = textBox5.Text;
+                Kodeord1 = textBox6.Text;
                 DB db = new DB();
 
-                MySqlConnection conn = new MySqlConnection(db.ConnStr);
+                if (Tlf != null && Fornavn != null && Efternavn != null && Brugernavn1 != null && Kodeord1 != null)
+                {
+                    db.Ejendomsmægler_OpretSælgerSQL();
+                    #region PassToGrid
+                    DataTable tbl = db.Ejendomsmægler_OpretSælger_PassToGrid();
+                    dataGridView1.DataSource = tbl;
+                    #endregion PassToGrid
+                }
+                else
+                {
+                    MessageBox.Show("Field reading error");
+                }
 
 
-                string sql = "INSERT INTO Sælger(Tlf, Fornavn, Efternavn, Brugernavn, Kodeord) " +
-                             "VALUES (@Tlf, @Fornavn, @Efternavn, @Brugernavn, HEX(AES_ENCRYPT(@Kodeord, 'somethingfunnyhere')));";
 
-
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                cmd.Parameters.AddWithValue("@Tlf", textBox2.Text);
-                cmd.Parameters.AddWithValue("@Fornavn", textBox3.Text);
-                cmd.Parameters.AddWithValue("@Efternavn", textBox4.Text);
-                cmd.Parameters.AddWithValue("@Brugernavn", textBox5.Text);
-                cmd.Parameters.AddWithValue("@Kodeord", textBox6.Text);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-
-                #region PassToGrid
-                DataTable tbl = new DataTable();
-                string sqlshow = "SELECT * FROM Sælger;";
-                MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                tbl.Load(cmd1.ExecuteReader());
-                dataGridView1.DataSource = tbl;
-                MessageBox.Show("Done");
-                conn.Close();
-                #endregion PassToGrid
             }
             catch (MySqlException ex)
             {

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,12 @@ namespace WindowsFormsApp1.Forms.Køber
 {
     public partial class Køber_Login : Form
     {
-        public static string Køber_ID_LoggedIn { get; set; }
+        public static int Køber_ID_LoggedIn { get; set; }
         public static string Køber_Tlf { get; set; }
         public static string Køber_Fornavn { get; set; }
         public static string Køber_Efternavn { get; set; }
         public static string Køber_Brugernavn { get; set; }
-        static string Køber_Kodeord { get; set; }
+        public static string Køber_Kodeord { get; set; }
 
         public Køber_Login()
         {
@@ -37,30 +38,9 @@ namespace WindowsFormsApp1.Forms.Køber
             try
             {
                 DB db = new DB();
+                Køber_Brugernavn = textBox1.Text;
 
-                MySqlConnection conn = new MySqlConnection(db.ConnStr);
-
-
-                string sql = "SELECT ID, Tlf, Fornavn, Efternavn, Brugernavn, CAST(AES_DECRYPT(UNHEX(Kodeord), 'somethingfunnyhere') as varchar(100)) FROM Køber WHERE Brugernavn = @Brugernavn;";
-
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                cmd.Parameters.AddWithValue("@Brugernavn", textBox1.Text);
-
-                conn.Open();
-
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
-                {
-                    Køber_ID_LoggedIn = Convert.ToString(rdr[0]);
-                    Køber_Tlf = Convert.ToString(rdr[1]);
-                    Køber_Fornavn = Convert.ToString(rdr[2]);
-                    Køber_Efternavn = Convert.ToString(rdr[3]);
-                    Køber_Brugernavn = Convert.ToString(rdr[4]);
-                    Køber_Kodeord = Convert.ToString(rdr[5]);
-                }
-                rdr.Close();
+                db.Køber_LoginSQL();
 
                 if (textBox1.Text == Køber_Brugernavn && textBox2.Text == Køber_Kodeord)
                 {

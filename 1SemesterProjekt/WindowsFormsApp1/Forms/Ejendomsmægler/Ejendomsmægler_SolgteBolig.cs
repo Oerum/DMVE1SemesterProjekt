@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,15 +23,9 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
             {
                 #region PassToGrid
                 DB db = new DB();
-                MySqlConnection conn = new MySqlConnection(db.ConnStr);
-                DataTable tbl = new DataTable();
-                string sqlshow = "SELECT * FROM SolgteBolig ORDER BY PostNr DESC";
-                MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                conn.Open();
-                tbl.Load(cmd1.ExecuteReader());
+                DataTable tbl = db.Ejendomsmægler_SolgteBolig_PassToGrid();
                 dataGridView1.DataSource = tbl;
-                conn.Close();
-                #endregion PassToGrid
+                #endregion PassToGrid       
             }
             catch (Exception ex)
             {

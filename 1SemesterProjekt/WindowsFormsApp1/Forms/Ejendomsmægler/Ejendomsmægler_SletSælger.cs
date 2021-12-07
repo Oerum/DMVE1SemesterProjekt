@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,19 +14,14 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
 {
     public partial class Ejendomsmægler_SletSælger : Form
     {
+        public static int ID { get; set; }
         public Ejendomsmægler_SletSælger()
         {
             InitializeComponent();
             #region PassToGrid
             DB db = new DB();
-            MySqlConnection conn = new MySqlConnection(db.ConnStr);
-            DataTable tbl = new DataTable();
-            string sqlshow = "SELECT * FROM Sælger;";
-            MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-            conn.Open();
-            tbl.Load(cmd1.ExecuteReader());
+            DataTable tbl = db.Ejendomsmægler_SletSælger_PassToGrid();
             dataGridView1.DataSource = tbl;
-            conn.Close();
             #endregion PassToGrid
         }
 
@@ -33,25 +29,15 @@ namespace WindowsFormsApp1.Forms.Ejendomsmægler
         {
             try
             {
+                ID = Convert.ToInt32(textBox1.Text);
+
                 DB db = new DB();
-                MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
-                string sql = "DELETE FROM Sælger WHERE ID = @ID;";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                cmd.Parameters.AddWithValue("@ID", int.Parse(textBox1.Text));
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
+                db.Ejendomsmælger_SletSælgerSQl();
 
                 #region PassToGrid
-                DataTable tbl = new DataTable();
-                string sqlshow = "SELECT * FROM Sælger";
-                MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                tbl.Load(cmd1.ExecuteReader());
+                DataTable tbl = db.Ejendomsmægler_SletSælger_PassToGrid();
                 dataGridView1.DataSource = tbl;
-                MessageBox.Show("Done");
-                conn.Close();
                 #endregion PassToGrid
 
             }

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,56 +14,53 @@ namespace WindowsFormsApp1.Forms
 {
     public partial class Ejendomsmægler_OpretBolig : Form
     {
+        public static int SælgerID { get; set; }
+        public static int Pris { get; set; }
+        public static int M2 { get; set; }
+        public static string By { get; set; }
+        public static string PostNr { get; set; }
+        public static string Adresse { get; set; }
+        public static int Etager1 { get; set; }
+        public static int Byggeår { get; set; }
+        public static string Boligtype { get; set; }
+        public static int Værelser { get; set; }
+        public static string Energimærke { get; set; }
+
         public Ejendomsmægler_OpretBolig()
         {
             InitializeComponent();
             #region PassToGrid
             DB db = new DB();
-            MySqlConnection conn = new MySqlConnection(db.ConnStr);
-            DataTable tbl = new DataTable();
-            string sqlshow = "SELECT * FROM BoligTilSalg;";
-            MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-            conn.Open();
-            tbl.Load(cmd1.ExecuteReader());
+            DataTable tbl = db.Ejendomsmægler_OpretBolig_PassToGrid();
             dataGridView1.DataSource = tbl;
-            conn.Close();
             #endregion PassToGrid
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DB db = new DB();
             try
             {
                 try
                 {
-                    DB db = new DB();
+                    SælgerID = Convert.ToInt32(comboBox6.Text);
+                    Pris = Convert.ToInt32(textBox3.Text);
+                    M2 = Convert.ToInt32(textBox4.Text);
+                    By = textBox5.Text;
+                    PostNr = textBox6.Text;
+                    Adresse = textBox7.Text;
+                    Etager1 = Convert.ToInt32(comboBox1.Text);
+                    Byggeår = Convert.ToInt32(comboBox2.Text);
+                    Boligtype = comboBox3.Text;
+                    Værelser = Convert.ToInt32(comboBox5.Text);
+                    Energimærke = comboBox4.Text;
 
-                    MySqlConnection conn = new MySqlConnection(db.ConnStr);
 
 
-                    string sql = "INSERT INTO BoligTilSalg(SælgerID, Pris, M2, `By`, PostNr, Adresse, Etager, Byggeår, Boligtype, Værelser, Energimærke, OprettelsesDato) " +
-                                 "VALUES(@SælgerID, @Pris, @M2, @By, @PostNr, @Adresse, @Etager, @Byggeår, @Boligtype, @Værelser, @Energimærke, CURRENT_Date);";
-
-
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-
-                    cmd.Parameters.AddWithValue("@SælgerID", Convert.ToInt32(comboBox6.Text));
-                    cmd.Parameters.AddWithValue("@Pris", Convert.ToInt32(textBox3.Text));
-                    cmd.Parameters.AddWithValue("@M2", Convert.ToInt32(textBox4.Text));
-                    cmd.Parameters.AddWithValue("@By", textBox5.Text);
-                    cmd.Parameters.AddWithValue("@PostNr", textBox6.Text);
-                    cmd.Parameters.AddWithValue("@Adresse", textBox7.Text);
-                    cmd.Parameters.AddWithValue("@Etager", Convert.ToInt32(comboBox1.Text));
-                    cmd.Parameters.AddWithValue("@Byggeår", Convert.ToInt32(comboBox2.Text));
-                    cmd.Parameters.AddWithValue("@Boligtype", comboBox3.Text);
-                    cmd.Parameters.AddWithValue("@Værelser", comboBox5.Text);
-                    cmd.Parameters.AddWithValue("@Energimærke", Convert.ToString(comboBox4.Text));
-
-                    conn.Open();
+                    
                     if (comboBox6.Text != "" && textBox3.Text != "" && textBox4.Text != "" && textBox5.Text != "" && textBox6.Text != "" && textBox7.Text != "" && comboBox1.Text != "" && comboBox2.Text != "" && comboBox3.Text != "" && comboBox4.Text != "" && comboBox5.Text != "")
                     {
-                        cmd.ExecuteNonQuery();
+                        db.Ejendomsmægler_OpretBoligSQL();
                     }
                     else
                     {
@@ -70,12 +68,8 @@ namespace WindowsFormsApp1.Forms
                     }
 
                     #region PassToGrid
-                    DataTable tbl = new DataTable();
-                    string sqlshow = "SELECT * FROM BoligTilSalg;";
-                    MySqlCommand cmd1 = new MySqlCommand(sqlshow, conn);
-                    tbl.Load(cmd1.ExecuteReader());
+                    DataTable tbl = db.Ejendomsmægler_OpretBolig_PassToGrid();
                     dataGridView1.DataSource = tbl;
-                    conn.Close();
                     #endregion PassToGrid
                 }
                 catch (MySqlException ex)

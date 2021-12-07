@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,12 @@ namespace WindowsFormsApp1.Forms.Køber
 {
     public partial class Køber_Register : Form
     {
+        public static string Tlf { get; set; }
+        public static string Fornavn { get; set; }
+        public static string Efternavn { get; set; }
+        public static string Brugernavn { get; set; }
+        public static string Kodeord { get; set; }
+
         public Køber_Register()
         {
             InitializeComponent();
@@ -29,26 +36,15 @@ namespace WindowsFormsApp1.Forms.Køber
         {
             try
             {
+                Tlf = textBox1.Text;
+                Fornavn = textBox3.Text;
+                Efternavn = textBox4.Text;
+                Brugernavn = textBox5.Text;
+                Kodeord = textBox6.Text;
+
                 DB db = new DB();
 
-                MySqlConnection conn = new MySqlConnection(db.ConnStr);
-
-
-                string sql = "INSERT INTO Køber(Tlf, Fornavn, Efternavn, Brugernavn, Kodeord) " +
-                             "VALUES (@Tlf, @Fornavn, @Efternavn, @Brugernavn, HEX(AES_ENCRYPT(@Kodeord, 'somethingfunnyhere')));";
-
-
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                cmd.Parameters.AddWithValue("@Tlf", textBox1.Text);
-                cmd.Parameters.AddWithValue("@Fornavn", textBox3.Text);
-                cmd.Parameters.AddWithValue("@Efternavn", textBox4.Text);
-                cmd.Parameters.AddWithValue("@Brugernavn", textBox5.Text);
-                cmd.Parameters.AddWithValue("@Kodeord", textBox6.Text);
-
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
+                db.Køber_OpretBruger();
 
                 MessageBox.Show("Bruger Oprettet");
 

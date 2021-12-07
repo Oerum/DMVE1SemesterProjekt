@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DAL;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace WindowsFormsApp1.Forms
 {
     public partial class Ejendomsmægler_Login : Form
     {
+        public static string EjendomsmæglerUserName { get; set; }
+        public static string EjendomsmæglerPassWord { get; set; }
 
         public Ejendomsmægler_Login()
         {
@@ -28,34 +31,14 @@ namespace WindowsFormsApp1.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string UserName = "";
-            string PassWord = "";
+            
             try
             {
                 DB db = new DB();
 
-                MySqlConnection conn = new MySqlConnection(db.ConnStr);
+                db.Ejendomsmægler_LoginSQL();
 
-
-                string sql = "SELECT Brugernavn, CAST(AES_DECRYPT(UNHEX(Kodeord), 'somethingfunnyhere') as varchar(100)) as 'Kodeord' FROM Ejendomsmaegler WHERE Brugernavn = Brugernavn;";
-
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                cmd.Parameters.AddWithValue("@Brugernavn", textBox1.Text);
-
-                conn.Open();
-                
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
-                {
-                    UserName = Convert.ToString(rdr[0]);
-                    PassWord = Convert.ToString(rdr[1]);
-
-                }
-                rdr.Close();
-
-                if (textBox1.Text == UserName && textBox2.Text == PassWord)
+                if (textBox1.Text == EjendomsmæglerUserName && textBox2.Text == EjendomsmæglerPassWord)
                 {
                     Ejendomsmælger_SinglePage Ej = new Ejendomsmægler_SingePage();
                     Ej.Show();
