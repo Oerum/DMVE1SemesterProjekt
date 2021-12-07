@@ -790,9 +790,6 @@ namespace DAL
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-
-
-
         #endregion Køber
 
         #region Sælger
@@ -872,7 +869,6 @@ namespace DAL
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-
         #endregion Sælger
 
     }

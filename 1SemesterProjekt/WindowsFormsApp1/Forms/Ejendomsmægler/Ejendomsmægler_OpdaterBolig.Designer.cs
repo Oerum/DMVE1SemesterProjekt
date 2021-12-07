@@ -114,7 +114,7 @@ namespace WindowsFormsApp1.Forms
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(32, 185);
-            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(210, 62);
             this.button2.TabIndex = 26;
@@ -125,7 +125,7 @@ namespace WindowsFormsApp1.Forms
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(32, 1338);
-            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(258, 77);
             this.button1.TabIndex = 25;
@@ -136,7 +136,7 @@ namespace WindowsFormsApp1.Forms
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(32, 615);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(6);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(206, 31);
             this.textBox5.TabIndex = 24;
@@ -144,7 +144,7 @@ namespace WindowsFormsApp1.Forms
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(32, 519);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(6);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(206, 31);
             this.textBox4.TabIndex = 23;
@@ -152,7 +152,7 @@ namespace WindowsFormsApp1.Forms
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(32, 423);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(6);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(206, 31);
             this.textBox3.TabIndex = 22;
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1.Forms
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(32, 135);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(206, 31);
             this.textBox1.TabIndex = 20;
@@ -265,7 +265,7 @@ namespace WindowsFormsApp1.Forms
             this.oprettelsesDatoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.boligTilSalgBindingSource7;
             this.dataGridView1.Location = new System.Drawing.Point(308, 83);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.Size = new System.Drawing.Size(2692, 1354);
@@ -460,7 +460,7 @@ namespace WindowsFormsApp1.Forms
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(30, 712);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(6);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(206, 31);
             this.textBox6.TabIndex = 36;
@@ -468,7 +468,7 @@ namespace WindowsFormsApp1.Forms
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(32, 808);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(6);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(206, 31);
             this.textBox7.TabIndex = 37;
@@ -514,7 +514,7 @@ namespace WindowsFormsApp1.Forms
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(32, 327);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(6);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(206, 31);
             this.textBox2.TabIndex = 83;
@@ -522,7 +522,7 @@ namespace WindowsFormsApp1.Forms
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(32, 904);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(6);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(206, 31);
             this.textBox8.TabIndex = 84;
@@ -530,7 +530,7 @@ namespace WindowsFormsApp1.Forms
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(32, 1000);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(6);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(206, 31);
             this.textBox9.TabIndex = 85;
@@ -538,7 +538,7 @@ namespace WindowsFormsApp1.Forms
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(32, 1096);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(6);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(206, 31);
             this.textBox10.TabIndex = 86;
@@ -546,7 +546,7 @@ namespace WindowsFormsApp1.Forms
             // textBox11
             // 
             this.textBox11.Location = new System.Drawing.Point(32, 1192);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(6);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(206, 31);
             this.textBox11.TabIndex = 87;
@@ -554,7 +554,7 @@ namespace WindowsFormsApp1.Forms
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(32, 1288);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(6);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(206, 31);
             this.textBox12.TabIndex = 88;
@@ -563,7 +563,7 @@ namespace WindowsFormsApp1.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(3014, 1456);
+            this.ClientSize = new System.Drawing.Size(3018, 1498);
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.textBox10);
@@ -593,7 +593,7 @@ namespace WindowsFormsApp1.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Ejendomsmægler_OpdaterBolig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejendomsmægler_OpdaterBolig";
